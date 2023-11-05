@@ -67,8 +67,8 @@
 									<ul>
 										<li><a href="index.php?act=home">Slider</a></li>
 										<li><a href="index.php?act=index-2">Video Background</a></li>
-										<li><a href="index-3.html">Vertical Slider</a></li>
-										<li><a href="index-4.html">GDPR Cookie Bar</a></li>
+										<li><a href="index.php?act=index-3">Vertical Slider</a></li>
+										<li><a href="index.php?act=index-4">GDPR Cookie Bar</a></li>
 									</ul>
 								</li>
 								<li class="megamenu submenu">
@@ -78,13 +78,13 @@
 											<div class="col-lg-3">
 												<h3>Listing grid</h3>
 												<ul>
-													<li><a href="listing-grid-1-full.html">Grid Full Width</a></li>
-													<li><a href="listing-grid-2-full.html">Grid Full Width 2</a></li>
-													<li><a href="listing-grid-3.html">Grid Boxed</a></li>
-													<li><a href="listing-grid-4-sidebar-left.html">Grid Sidebar Left</a></li>
-													<li><a href="listing-grid-5-sidebar-right.html">Grid Sidebar Right</a></li>
-													<li><a href="listing-grid-6-sidebar-left.html">Grid Sidebar Left 2</a></li>
-													<li><a href="listing-grid-7-sidebar-right.html">Grid Sidebar Right 2</a></li>
+													<li><a href="index.php?act=listing-grid-1-full">Grid Full Width</a></li>
+													<li><a href="index.php?act=listing-grid-2-full">Grid Full Width 2</a></li>
+													<li><a href="index.php?act=listing-grid-3">Grid Boxed</a></li>
+													<li><a href="index.php?act=listing-grid-4-sidebar-left">Grid Sidebar Left</a></li>
+													<li><a href="index.php?act=listing-grid-5-sidebar-right">Grid Sidebar Right</a></li>
+													<li><a href="index.php?act=listing-grid-6-sidebar-left">Grid Sidebar Left 2</a></li>
+													<li><a href="index.php?act=listing-grid-7-sidebar-right">Grid Sidebar Right 2</a></li>
 												</ul>
 											</div>
 											<div class="col-lg-3">
