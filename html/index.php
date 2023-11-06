@@ -6,6 +6,30 @@
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "blog":
+                include "view/blog.php";
+                break;
+            case "product-detail-3":
+                include "view/product-detail-3.php";
+                break;
+            case "product-detail-2":
+                include "view/product-detail-2.php";
+                break;
+            case "product-detail-1":
+                include "view/product-detail-1.php";
+                break;
+            case "listing-row-4-sidebar-extended":
+                include "view/listing-row-4-sidebar-extended.php";
+                break;
+            case "listing-row-3-sidebar-left":
+                include "view/listing-row-3-sidebar-left.php";
+                break;
+            case "listing-row-2-sidebar-right":
+                include "view/listing-row-2-sidebar-right.php";
+                break;
+            case "listing-row-1-sidebar-left":
+                include "view/listing-row-1-sidebar-left.php";
+                break;
             case "listing-grid-7-sidebar-right":
                 include "view/listing-grid-7-sidebar-right.php";
                 break;

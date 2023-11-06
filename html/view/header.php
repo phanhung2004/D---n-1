@@ -44,7 +44,7 @@
 				<div class="row small-gutters">
 					<div class="col-xl-3 col-lg-3 d-lg-flex align-items-center">
 						<div id="logo">
-							<a href="index.html"><img src="img/logo_quanao.svg" alt="" width="100" height="55" style="filter: brightness(0) invert(1);"></a>
+							<a href="index.php?act=home"><img src="img/logo_quanao.svg" alt="" width="100" height="55" style="filter: brightness(0) invert(1);"></a>
 						</div>
 					</div>
 					<nav class="col-xl-6 col-lg-7">
@@ -90,16 +90,16 @@
 											<div class="col-lg-3">
 												<h3>Listing row &amp; Product</h3>
 												<ul>
-													<li><a href="listing-row-1-sidebar-left.html">Row Sidebar Left</a></li>
-													<li><a href="listing-row-2-sidebar-right.html">Row Sidebar Right</a></li>
-													<li><a href="listing-row-3-sidebar-left.html">Row Sidebar Left 2</a></li>
-													<li><a href="listing-row-4-sidebar-extended.html">Row Sidebar Extended</a></li>
-													<li><a href="product-detail-1.html">Product Large Image</a></li>
-													<li><a href="product-detail-2.html">Product Carousel</a></li>
-													<li><a href="product-detail-3.html">Product Sticky Info</a></li>
+													<li><a href="index.php?act=listing-row-1-sidebar-left">Row Sidebar Left</a></li>
+													<li><a href="index.php?act=listing-row-2-sidebar-right">Row Sidebar Right</a></li>
+													<li><a href="index.php?act=listing-row-3-sidebar-left">Row Sidebar Left 2</a></li>
+													<li><a href="index.php?act=listing-row-4-sidebar-extended">Row Sidebar Extended</a></li>
+													<li><a href="index.php?act=product-detail-1">Product Large Image</a></li>
+													<li><a href="index.php?act=product-detail-2">Product Carousel</a></li>
+													<li><a href="index.php?act=product-detail-3">Product Sticky Info</a></li>
 												</ul>
 											</div>
-											<div class="col-lg-3">
+											<!-- <div class="col-lg-3">
 												<h3>Other pages</h3>
 												<ul>
 													<li><a href="cart.html">Cart Page</a></li>
@@ -111,7 +111,7 @@
 													<li><a href="help-2.html">Help Page 2</a></li>
 													<li><a href="leave-review.html">Leave a Review</a></li>
 												</ul>
-											</div>
+											</div> -->
 											<div class="col-lg-3 d-xl-block d-lg-block d-md-none d-sm-none d-none">
 												<div class="banner_menu">
 													<a href="#0">
@@ -124,7 +124,7 @@
 									</div>
 									<!-- /menu-wrapper -->
 								</li>
-								<li class="submenu">
+								<!-- <li class="submenu">
 									<a href="javascript:void(0);" class="show-submenu">Extra Pages</a>
 									<ul>
 										<li><a href="header-2.html">Header Style 2</a></li>
@@ -139,9 +139,9 @@
 										<li><a href="modal-advertise.html">Modal Advertise</a></li>
 										<li><a href="modal-newsletter.html">Modal Newsletter</a></li>
 									</ul>
-								</li>
+								</li> -->
 								<li>
-									<a href="blog.html">Blog</a>
+									<a href="index.php?act=blog">Blog</a>
 								</li>
 								<li>
 									<a href="#0">Buy Template</a>
