@@ -163,7 +163,7 @@
 			<div class="container">
 				<div class="row small-gutters">
 					<div class="col-xl-3 col-lg-3 col-md-3">
-						<nav class="categories">
+						<!-- <nav class="categories">
 							<ul class="clearfix">
 								<li><span>
 										<a href="#">
@@ -231,7 +231,7 @@
 									</div>
 								</li>
 							</ul>
-						</nav>
+						</nav> -->
 					</div>
 					<div class="col-xl-6 col-lg-7 col-md-6 d-none d-md-block">
 						<div class="custom-search-input">
@@ -263,7 +263,7 @@
 										</ul>
 										<div class="total_drop">
 											<div class="clearfix"><strong>Total</strong><span>$200.00</span></div>
-											<a href="cart.html" class="btn_1 outline">View Cart</a><a href="checkout.html" class="btn_1">Checkout</a>
+											<a href="index.php?act=cart" class="btn_1 outline">View Cart</a><a href="index.php?act=checkout" class="btn_1">Checkout</a>
 										</div>
 									</div>
 								</div>
@@ -276,8 +276,8 @@
 								<div class="dropdown dropdown-access">
 									<a href="index.php?act=account" class="access_link"><span>Account</span></a>
 									<div class="dropdown-menu">
-										<a href="account.html" class="btn_1">Sign In or Sign Up</a>
-										<ul>
+										<a href="index.php?act=account" class="btn_1">Sign In or Sign Up</a>
+										<!-- <ul>
 											<li>
 												<a href="track-order.html"><i class="ti-truck"></i>Track your Order</a>
 											</li>
@@ -290,7 +290,7 @@
 											<li>
 												<a href="help.html"><i class="ti-help-alt"></i>Help and Faq</a>
 											</li>
-										</ul>
+										</ul> -->
 									</div>
 								</div>
 								<!-- /dropdown-access-->

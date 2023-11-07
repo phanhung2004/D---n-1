@@ -48,24 +48,24 @@
 								<div class="col-6 form-group pr-1">
 									<input type="text" class="form-control" placeholder="Name">
 								</div>
-								<div class="col-6 form-group pl-1">
+								<!-- <div class="col-6 form-group pl-1">
 									<input type="text" class="form-control" placeholder="Last Name">
-								</div>
+								</div> -->
 							</div>
 							<!-- /row -->
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="Full Address">
 							</div>
 							<div class="row no-gutters">
-								<div class="col-6 form-group pr-1">
+								<!-- <div class="col-6 form-group pr-1">
 									<input type="text" class="form-control" placeholder="City">
-								</div>
-								<div class="col-6 form-group pl-1">
+								</div> -->
+								<!-- <div class="col-6 form-group pl-1">
 									<input type="text" class="form-control" placeholder="Postal code">
-								</div>
+								</div> -->
 							</div>
 							<!-- /row -->
-							<div class="row no-gutters">
+							<!-- <div class="row no-gutters">
 								<div class="col-md-12 form-group">
 									<div class="custom-select-form">
 										<select class="wide add_bottom_15" name="country" id="country">
@@ -76,41 +76,41 @@
 										</select>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<!-- /row -->
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="Telephone">
 							</div>
 							<hr>
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label class="container_check" id="other_addr">Other billing address
 								  <input type="checkbox">
 								  <span class="checkmark"></span>
 								</label>
-							</div>
+							</div> -->
 							<div id="other_addr_c" class="pt-2">
 							<div class="row no-gutters">
 								<div class="col-6 form-group pr-1">
 									<input type="text" class="form-control" placeholder="Name">
 								</div>
-								<div class="col-6 form-group pl-1">
+								<!-- <div class="col-6 form-group pl-1">
 									<input type="text" class="form-control" placeholder="Last Name">
-								</div>
+								</div> -->
 							</div>
 							<!-- /row -->
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="Full Address">
 							</div>
 							<div class="row no-gutters">
-								<div class="col-6 form-group pr-1">
+								<!-- <div class="col-6 form-group pr-1">
 									<input type="text" class="form-control" placeholder="City">
 								</div>
 								<div class="col-6 form-group pl-1">
 									<input type="text" class="form-control" placeholder="Postal code">
-								</div>
+								</div> -->
 							</div>
 							<!-- /row -->
-							<div class="row no-gutters">
+							<!-- <div class="row no-gutters">
 								<div class="col-md-12 form-group">
 									<div class="custom-select-form">
 										<select class="wide add_bottom_15" name="country" id="country_2">
@@ -121,7 +121,7 @@
 										</select>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<!-- /row -->
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="Telephone">
@@ -132,8 +132,8 @@
 						</div>
 						<!-- /tab_1 -->
 					  <div class="tab-pane fade" id="tab_2" role="tabpanel" aria-labelledby="tab_2" style="position: relative;">
-						  <a href="#0" class="social_bt facebook">Login con Facebook</a>
-						  <a href="#0" class="social_bt google">Login con Google</a>
+						  <!-- <a href="#0" class="social_bt facebook">Login con Facebook</a>
+						  <a href="#0" class="social_bt google">Login con Google</a> -->
 						  <div class="form-group">
 								<input type="email" class="form-control" placeholder="Email">
 							</div>
@@ -141,12 +141,12 @@
 								<input type="password" class="form-control" placeholder="Password" name="password_in" id="password_in">
 							</div>
 						  	<div class="clearfix add_bottom_15">
-								<div class="checkboxes float-start">
+								<!-- <div class="checkboxes float-start">
 									<label class="container_check">Remember me
 										<input type="checkbox">
 										<span class="checkmark"></span>
 									</label>
-								</div>
+								</div> -->
 								<div class="float-end"><a id="forgot" href="#0">Lost Password?</a></div>
 							</div>
 							  <div id="forgot_pw">
@@ -165,7 +165,7 @@
 					<!-- /step -->
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<div class="step middle payments">
+					<!-- <div class="step middle payments">
 						<h3>2. Payment and Shipping</h3>
 							<ul>
 								<li>
@@ -214,7 +214,7 @@
 								
 							</ul>
 						
-					</div>
+					</div> -->
 					<!-- /step -->
 					
 				</div>
