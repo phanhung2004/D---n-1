@@ -6,6 +6,15 @@
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "account":
+                include "view/account.php";
+                break;
+            case "cart":
+                include "view/cart.php";
+                break;
+            case "checkout":
+                include "view/checkout.php";
+                break;
             case "blog":
                 include "view/blog.php";
                 break;

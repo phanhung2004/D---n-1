@@ -243,7 +243,7 @@
 						<ul class="top_tools">
 							<li>
 								<div class="dropdown dropdown-cart">
-									<a href="cart.html" class="cart_bt"><strong>2</strong></a>
+									<a href="index.php?act=cart" class="cart_bt"><strong>2</strong></a>
 									<div class="dropdown-menu">
 										<ul>
 											<li>
@@ -274,7 +274,7 @@
 							</li>
 							<li>
 								<div class="dropdown dropdown-access">
-									<a href="account.html" class="access_link"><span>Account</span></a>
+									<a href="index.php?act=account" class="access_link"><span>Account</span></a>
 									<div class="dropdown-menu">
 										<a href="account.html" class="btn_1">Sign In or Sign Up</a>
 										<ul>
