@@ -160,7 +160,7 @@
 						  	<input type="submit" class="btn_1 full-width" value="Login">
 						</div>
 						<!-- /tab_2 -->
-					</div>
+					</div>	
 					</div>
 					<!-- /step -->
 				</div>
