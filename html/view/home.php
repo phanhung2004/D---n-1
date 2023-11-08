@@ -61,7 +61,7 @@
 		</div>
 		<!--/carousel-->
 
-		<ul id="banners_grid" class="clearfix">
+		<!-- <ul id="banners_grid" class="clearfix">
 			<li>
 				<a href="#0" class="img_container">
 					<img src="img/banners_cat_placeholder.jpg" data-src="img/banner_1.jpg" alt="" class="lazy">
@@ -89,7 +89,7 @@
 					</div>
 				</a>
 			</li>
-		</ul>
+		</ul> -->
 		<!--/banners_grid -->
 		
 		<div class="container margin_60_35">
@@ -99,34 +99,33 @@
 				<p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
 			</div>
 			<div class="row small-gutters">
-				<div class="col-6 col-md-4 col-xl-3">
-					<div class="grid_item">
-						<figure>
-							<span class="ribbon off">-30%</span>
+				<?php 
+					foreach($spnew as $sp){
+						extract($sp);
+				?>
+					<div class="col-6 col-md-4 col-xl-3">
+						<div class="grid_item">
+							<figure>
+								<!-- <span class="ribbon off"></span> -->
+								<a href="product-detail-1.html">
+									<img class="img-fluid lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/1.jpg" alt="">
+									<img class="img-fluid lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/1_b.jpg" alt="">
+								</a>
+							</figure>
 							<a href="product-detail-1.html">
-								<img class="img-fluid lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/1.jpg" alt="">
-								<img class="img-fluid lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/1_b.jpg" alt="">
+								<h3>Armor Air x Fear</h3>
 							</a>
-							<div data-countdown="2019/05/15" class="countdown"></div>
-						</figure>
-						<div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-						<a href="product-detail-1.html">
-							<h3>Armor Air x Fear</h3>
-						</a>
-						<div class="price_box">
-							<span class="new_price">$48.00</span>
-							<span class="old_price">$60.00</span>
+							<div class="price_box">
+								<span class="new_price">$48.00</span>
+								<span class="old_price">$60.00</span>
+							</div>
 						</div>
-						<ul>
-							<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-							<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-							<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-						</ul>
 					</div>
-					<!-- /grid_item -->
-				</div>
+				<?php
+					}
+				?>
 				<!-- /col -->
-				<div class="col-6 col-md-4 col-xl-3">
+				<!-- <div class="col-6 col-md-4 col-xl-3">
 					<div class="grid_item">
 						<span class="ribbon off">-30%</span>
 						<figure>
@@ -149,11 +148,11 @@
 							<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
 							<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
 						</ul>
-					</div>
-					<!-- /grid_item -->
-				</div>
+					</div> -->
+					
+				<!-- </div> -->
 				<!-- /col -->
-				<div class="col-6 col-md-4 col-xl-3">
+				<!-- <div class="col-6 col-md-4 col-xl-3">
 					<div class="grid_item">
 						<span class="ribbon off">-50%</span>
 						<figure>
@@ -176,11 +175,11 @@
 							<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
 							<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
 						</ul>
-					</div>
-					<!-- /grid_item -->
-				</div>
+					</div> -->
+					
+				<!-- </div> -->
 				<!-- /col -->
-				<div class="col-6 col-md-4 col-xl-3">
+				<!-- <div class="col-6 col-md-4 col-xl-3">
 					<div class="grid_item">
 						<span class="ribbon new">New</span>
 						<figure>
@@ -202,10 +201,10 @@
 							<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
 						</ul>
 					</div>
-					<!-- /grid_item -->
-				</div>
+					
+				</div> -->
 				<!-- /col -->
-				<div class="col-6 col-md-4 col-xl-3">
+				<!-- <div class="col-6 col-md-4 col-xl-3">
 					<div class="grid_item">
 						<span class="ribbon new">New</span>
 						<figure>
@@ -227,10 +226,10 @@
 							<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
 						</ul>
 					</div>
-					<!-- /grid_item -->
-				</div>
+					
+				</div> -->
 				<!-- /col -->
-				<div class="col-6 col-md-4 col-xl-3">
+				<!-- <div class="col-6 col-md-4 col-xl-3">
 					<div class="grid_item">
 						<span class="ribbon new">New</span>
 						<figure>
@@ -252,10 +251,10 @@
 							<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
 						</ul>
 					</div>
-					<!-- /grid_item -->
-				</div>
+					
+				</div> -->
 				<!-- /col -->
-				<div class="col-6 col-md-4 col-xl-3">
+				<!-- <div class="col-6 col-md-4 col-xl-3">
 					<div class="grid_item">
 						<span class="ribbon hot">Hot</span>
 						<figure>
@@ -277,10 +276,10 @@
 							<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
 						</ul>
 					</div>
-					<!-- /grid_item -->
-				</div>
+					
+				</div> -->
 				<!-- /col -->
-				<div class="col-6 col-md-4 col-xl-3">
+				<!-- <div class="col-6 col-md-4 col-xl-3">
 					<div class="grid_item">
 						<span class="ribbon hot">Hot</span>
 						<figure>
@@ -302,8 +301,8 @@
 							<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
 						</ul>
 					</div>
-					<!-- /grid_item -->
-				</div>
+					
+				</div> -->
 				<!-- /col -->
 			</div>
 			<!-- /row -->
@@ -564,11 +563,3 @@
 		<!-- /container -->
 	</main>
 	<!-- /main -->
-    <div id="toTop"></div><!-- Back to top button -->
-	
-	<!-- COMMON SCRIPTS -->
-    <script src="js/common_scripts.min.js"></script>
-    <script src="js/main.js"></script>
-	
-	<!-- SPECIFIC SCRIPTS -->
-	<script src="js/carousel-home.min.js"></script>

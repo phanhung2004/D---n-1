@@ -87,7 +87,7 @@
 													<li><a href="index.php?act=listing-grid-7-sidebar-right">Grid Sidebar Right 2</a></li>
 												</ul>
 											</div>
-											<div class="col-lg-3">
+											<!-- <div class="col-lg-3">
 												<h3>Listing row &amp; Product</h3>
 												<ul>
 													<li><a href="index.php?act=listing-row-1-sidebar-left">Row Sidebar Left</a></li>
@@ -98,7 +98,7 @@
 													<li><a href="index.php?act=product-detail-2">Product Carousel</a></li>
 													<li><a href="index.php?act=product-detail-3">Product Sticky Info</a></li>
 												</ul>
-											</div>
+											</div> -->
 											<!-- <div class="col-lg-3">
 												<h3>Other pages</h3>
 												<ul>
