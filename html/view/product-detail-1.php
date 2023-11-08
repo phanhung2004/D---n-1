@@ -55,10 +55,10 @@
 	                            <label class="col-xl-7 col-lg-5  col-md-6 col-6 pt-0"><strong>Color</strong></label>
 	                            <div class="col-xl-5 col-lg-5 col-md-6 col-6 colors">
 	                                <ul>
-	                                    <li><a href="#0" class="color color_1 active"></a></li>
-	                                    <li><a href="#0" class="color color_2"></a></li>
-	                                    <li><a href="#0" class="color color_3"></a></li>
-	                                    <li><a href="#0" class="color color_4"></a></li>
+	                                    <li><a href="#0" class="color color_11 active" style="background-color: black;"></a></li>
+	                                    <li><a href="#0" class="color color_22" style="background-color: whitesmoke;"></a></li>
+	                                    <!-- <li><a href="#0" class="color color_3"></a></li>
+	                                    <li><a href="#0" class="color color_4"></a></li> -->
 	                                </ul>
 	                            </div>
 	                        </div>
@@ -85,12 +85,20 @@
 	                                </div>
 	                            </div>
 	                        </div>
+							<div class="row">
+	                            <label class="col-xl-7 col-lg-5  col-md-6 col-6"><strong>Số lượng có trong kho</strong></label>
+	                            <div class="col-xl-5 col-lg-5 col-md-6 col-6">
+	                                <div class="">
+										<p style="text-align: center;margin-top: 15px;">10</p>
+	                                </div>
+	                            </div>
+	                        </div>
 	                        <div class="row mt-3">
 	                            <div class="col-lg-7 col-md-6">
 	                                <div class="price_main"><span class="new_price">$148.00</span><span class="percentage">-20%</span> <span class="old_price">$160.00</span></div>
 	                            </div>
 	                            <div class="col-lg-5 col-md-6">
-	                                <div class="btn_add_to_cart"><a href="#0" class="btn_1">Add to Cart</a></div>
+	                                <div class="btn_add_to_cart"><a href="index.php?act=cart" class="btn_1">Add to Cart</a></div>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -223,7 +231,7 @@
 	                                </div>
 	                            </div>
 	                            <!-- /row -->
-	                            <p class="text-end"><a href="leave-review.html" class="btn_1">Leave a review</a></p>
+	                            <p class="text-end"><a href="index.php?act=leave-review" class="btn_1">Leave a review</a></p>
 	                        </div>
 	                        <!-- /card-body -->
 	                    </div>

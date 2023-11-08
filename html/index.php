@@ -10,6 +10,9 @@
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "leave-review":
+                include "view/leave-review.php";
+                break;
             case "account":
                 include "view/account.php";
                 break;

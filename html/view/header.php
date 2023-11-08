@@ -65,10 +65,10 @@
 								<li class="submenu">
 									<a href="javascript:void(0);" class="show-submenu">Home</a>
 									<ul>
-										<li><a href="index.php?act=home">Slider</a></li>
-										<li><a href="index.php?act=index-2">Video Background</a></li>
-										<li><a href="index.php?act=index-3">Vertical Slider</a></li>
-										<li><a href="index.php?act=index-4">GDPR Cookie Bar</a></li>
+										<li><a href="index.php?act=home">Home</a></li>
+										<li><a href="index.php?act=index-2">Video Mô tả</a></li>
+										<!-- <li><a href="index.php?act=index-3">Vertical Slider</a></li>
+										<li><a href="index.php?act=index-4">GDPR Cookie Bar</a></li> -->
 									</ul>
 								</li>
 								<li class="megamenu submenu">
@@ -76,15 +76,15 @@
 									<div class="menu-wrapper">
 										<div class="row small-gutters">
 											<div class="col-lg-3">
-												<h3>Listing grid</h3>
+												<h3>Danh mục các loại áo</h3>
 												<ul>
-													<li><a href="index.php?act=listing-grid-1-full">Grid Full Width</a></li>
-													<li><a href="index.php?act=listing-grid-2-full">Grid Full Width 2</a></li>
-													<li><a href="index.php?act=listing-grid-3">Grid Boxed</a></li>
-													<li><a href="index.php?act=listing-grid-4-sidebar-left">Grid Sidebar Left</a></li>
+													<li><a href="index.php?act=listing-grid-1-full">Áo sơ mi</a></li>
+													<li><a href="index.php?act=listing-grid-2-full">Áo phông</a></li>
+													<li><a href="index.php?act=listing-grid-3">Áo Polo</a></li>
+													<!-- <li><a href="index.php?act=listing-grid-4-sidebar-left">Grid Sidebar Left</a></li>
 													<li><a href="index.php?act=listing-grid-5-sidebar-right">Grid Sidebar Right</a></li>
 													<li><a href="index.php?act=listing-grid-6-sidebar-left">Grid Sidebar Left 2</a></li>
-													<li><a href="index.php?act=listing-grid-7-sidebar-right">Grid Sidebar Right 2</a></li>
+													<li><a href="index.php?act=listing-grid-7-sidebar-right">Grid Sidebar Right 2</a></li> -->
 												</ul>
 											</div>
 											<!-- <div class="col-lg-3">
@@ -140,11 +140,11 @@
 										<li><a href="modal-newsletter.html">Modal Newsletter</a></li>
 									</ul>
 								</li> -->
-								<li>
+								<!-- <li>
 									<a href="index.php?act=blog">Blog</a>
-								</li>
+								</li> -->
 								<li>
-									<a href="#0">Buy Template</a>
+									<a href="#0">Tổng hợp bình luận</a>
 								</li>
 							</ul>
 						</div>

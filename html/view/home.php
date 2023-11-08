@@ -107,17 +107,17 @@
 						<div class="grid_item">
 							<figure>
 								<!-- <span class="ribbon off"></span> -->
-								<a href="product-detail-1.html">
+								<a href="index.php?act=product-detail-1">
 									<img class="img-fluid lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/1.jpg" alt="">
 									<img class="img-fluid lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/1_b.jpg" alt="">
 								</a>
 							</figure>
-							<a href="product-detail-1.html">
-								<h3>Armor Air x Fear</h3>
+							<a href="index.php?act=product-detail-1">
+								<h3><?=$name?></h3>
 							</a>
 							<div class="price_box">
-								<span class="new_price">$48.00</span>
-								<span class="old_price">$60.00</span>
+								<span class="new_price"><?=$price?></span>
+								<span class="old_price"><?=$giakhuyenmai?></span>
 							</div>
 						</div>
 					</div>
@@ -497,22 +497,29 @@
 				<p>Cum doctus civibus efficiantur in imperdiet deterruisset</p>
 			</div>
 			<div class="row">
+				<?php
+					foreach($spnew as $sp){
+						extract($sp);
+				?>
 				<div class="col-lg-6">
-					<a class="box_news" href="blog.html">
+					<a class="box_news" href="index.php?act=product-detail-1">
 						<figure>
 							<img src="img/blog-thumb-placeholder.jpg" data-src="img/blog-thumb-1.jpg" alt="" width="400" height="266" class="lazy">
 							<figcaption><strong>28</strong>Dec</figcaption>
 						</figure>
 						<ul>
-							<li>by Mark Twain</li>
-							<li>20.11.2017</li>
+							<li>Số lượng: <?=$soluong?></li>
+							<li><?=$ngaydang?></li>
 						</ul>
-						<h4>Pri oportere scribentur eu</h4>
-						<p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
+						<h4><?=$name?></h4>
+						<p><?=$mota?></p>
 					</a>
 				</div>
+				<?php
+					}
+				?>
 				<!-- /box_news -->
-				<div class="col-lg-6">
+				<!-- <div class="col-lg-6">
 					<a class="box_news" href="blog.html">
 						<figure>
 							<img src="img/blog-thumb-placeholder.jpg" data-src="img/blog-thumb-2.jpg" alt="" width="400" height="266" class="lazy">
@@ -525,9 +532,9 @@
 						<h4>Duo eius postea suscipit ad</h4>
 						<p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
 					</a>
-				</div>
+				</div> -->
 				<!-- /box_news -->
-				<div class="col-lg-6">
+				<!-- <div class="col-lg-6">
 					<a class="box_news" href="blog.html">
 						<figure>
 							<img src="img/blog-thumb-placeholder.jpg" data-src="img/blog-thumb-3.jpg" alt="" width="400" height="266" class="lazy">
@@ -540,9 +547,9 @@
 						<h4>Elitr mandamus cu has</h4>
 						<p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
 					</a>
-				</div>
+				</div> -->
 				<!-- /box_news -->
-				<div class="col-lg-6">
+				<!-- <div class="col-lg-6">
 					<a class="box_news" href="blog.html">
 						<figure>
 							<img src="img/blog-thumb-placeholder.jpg" data-src="img/blog-thumb-4.jpg" alt="" width="400" height="266" class="lazy">
@@ -555,7 +562,7 @@
 						<h4>Id est adhuc ignota delenit</h4>
 						<p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
 					</a>
-				</div>
+				</div> -->
 				<!-- /box_news -->
 			</div>
 			<!-- /row -->

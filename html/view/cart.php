@@ -26,6 +26,9 @@
 										Product
 									</th>
 									<th>
+										Trạng thái
+									</th>
+									<th>
 										Price
 									</th>
 									<th>
@@ -46,6 +49,9 @@
 											<img src="img/products/product_placeholder_square_small.jpg" data-src="img/products/shoes/1.jpg" class="lazy" alt="Image">
 										</div>
 										<span class="item_cart">Armor Air x Fear</span>
+									</td>
+									<td>
+										Đang chờ xác thực
 									</td>
 									<td>
 										<strong>$140.00</strong>
@@ -70,6 +76,9 @@
 										<span class="item_cart">Armor Okwahn II</span>
 									</td>
 									<td>
+										Đang chờ xác thực
+									</td>
+									<td>
 										<strong>$110.00</strong>
 									</td>
 									<td>
@@ -80,6 +89,7 @@
 									<td>
 										<strong>$110.00</strong>
 									</td>
+									
 									<td class="options">
 										<a href="#"><i class="ti-trash"></i></a>
 									</td>
@@ -90,6 +100,9 @@
 											<img src="img/products/product_placeholder_square_small.jpg" data-src="img/products/shoes/3.jpg" class="lazy" alt="Image">
 										</div>
 										<span class="item_cart">Armor Air Wildwood ACG</span>
+									</td>
+									<td>
+										Đang chờ xác thực
 									</td>
 									<td>
 										<strong>$90.00</strong>
@@ -112,7 +125,7 @@
 
 						<div class="row add_top_30 flex-sm-row-reverse cart_actions">
 						<div class="col-sm-4 text-end">
-							<button type="button" class="btn_1 gray">Update Cart</button>
+							<button type="button" class="btn_1 gray"><a href="index.php?act=home">Update Cart</a></button>
 						</div>
 							<div class="col-sm-8">
 							<div class="apply-coupon">
@@ -145,7 +158,7 @@
 					<span>Total</span> $247.00
 				</li>
 			</ul>
-			<a href="cart-2.html" class="btn_1 full-width cart">Proceed to Checkout</a>
+			<a href="index.php?act=checkout" class="btn_1 full-width cart">Proceed to Checkout</a>
 					</div>
 				</div>
 			</div>
