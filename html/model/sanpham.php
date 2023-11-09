@@ -4,10 +4,6 @@
     $listsanpham=pdo_query($sql);
     return $listsanpham;
  }
-   function delete($id){
-      $sql = "DELETE FROM `sanpham` WHERE id=".$id;
-      pdo_execute($sql);
-   } 
    function loadall_sanpham($keyw="",$iddm=0){
       $sql="select * from sanpham where 1";
       // where 1 tức là nó đúng
@@ -21,5 +17,14 @@
       $listsanpham=pdo_query($sql);
       return  $listsanpham;
   }
+  function delete($id){
+    $sql = "DELETE FROM `sanpham` WHERE id=".$id;
+    pdo_execute($sql);
+  }
+
+  function insert_sanpham($name, $price, $color, $image, $size, $mota, $date, $soluong, $giagoc, $giakhuyenmai, $iddm){
+    $sql = "INSERT INTO `sanpham` (`name`, `price`, `color`, `image`, `size`, `mota`, `ngaydang`, `soluong`, `giagoc`, `giakhuyenmai`, `iddm`) VALUES ('$name', '$price','$color','$image','$size', '$mota', '$date', '$soluong', '$giagoc', '$giakhuyenmai', '$iddm');";
+    pdo_execute($sql);
+}
   
 ?>
