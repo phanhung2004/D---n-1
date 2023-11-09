@@ -63,7 +63,7 @@
 							</div>
 							<ul>
                                 <li>
-									<a href="index.php?act=blog">Home</a>
+									<a href="index.php?act=home">Home</a>
 								</li>
 								<!-- <li class="submenu">
 									<a href="" >Home</a> -->
