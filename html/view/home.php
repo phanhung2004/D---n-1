@@ -102,14 +102,15 @@
 				<?php 
 					foreach($spnew as $sp){
 						extract($sp);
+						$image=$img_path.$image;
 				?>
 					<div class="col-6 col-md-4 col-xl-3">
 						<div class="grid_item">
 							<figure>
 								<!-- <span class="ribbon off"></span> -->
 								<a href="index.php?act=product-detail-1">
-									<img class="img-fluid lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/1.jpg" alt="">
-									<img class="img-fluid lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/1_b.jpg" alt="">
+									<img class="img-fluid lazy" src="<?=$image?>"alt="">
+									<img class="img-fluid lazy" src="<?=$image?>"alt="">
 								</a>
 							</figure>
 							<a href="index.php?act=product-detail-1">
@@ -504,7 +505,7 @@
 				<div class="col-lg-6">
 					<a class="box_news" href="index.php?act=product-detail-1">
 						<figure>
-							<img src="img/blog-thumb-placeholder.jpg" data-src="img/blog-thumb-1.jpg" alt="" width="400" height="266" class="lazy">
+							<img src="<?=$image?>" data-src="img/blog-thumb-1.jpg" alt="" width="400" height="266" class="lazy">
 							<figcaption><strong>28</strong>Dec</figcaption>
 						</figure>
 						<ul>

@@ -26,5 +26,17 @@
     $sql = "INSERT INTO `sanpham` (`name`, `price`, `color`, `image`, `size`, `mota`, `ngaydang`, `soluong`, `giagoc`, `giakhuyenmai`, `iddm`) VALUES ('$name', '$price','$color','$image','$size', '$mota', '$date', '$soluong', '$giagoc', '$giakhuyenmai', '$iddm');";
     pdo_execute($sql);
 }
-  
+function loadone_sanpham($id){
+  $sql = "select * from sanpham where id = $id";
+  $result = pdo_query_one($sql);
+  return $result;
+}
+function updatesp($id,$name, $price, $color, $image, $size, $mota, $soluong, $giagoc, $giakhuyenmai, $iddm) {
+  if($image!=""){
+      $sql = "UPDATE `sanpham` SET `name` = '{$name}', `price` = '{$price}', `image` = '{$image}', `mota` = '{$mota}', `iddm` = '{$iddm}',`size` = '{$size}',`color` = '{$color}',`soluong` = '{$soluong}',`giagoc` = '{$giagoc}',`giakhuyenmai` = '{$giakhuyenmai}' WHERE `sanpham`.`id` = $id";
+  }else{
+      $sql = "UPDATE `sanpham` SET `name` = '{$name}', `price` = '{$price}', `image` = '{$image}', `mota` = '{$mota}', `iddm` = '{$iddm}',`size` = '{$size}',`color` = '{$color}',`soluong` = '{$soluong}',`giagoc` = '{$giagoc}',`giakhuyenmai` = '{$giakhuyenmai}' WHERE `sanpham`.`id` = $id";
+  }
+  pdo_execute($sql);
+}
 ?>

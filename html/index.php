@@ -4,7 +4,8 @@
     include "view/header.php";
     include "model/sanpham.php";
 
-    // include "global";
+    include "global.php";
+
     $spnew = loadall_sanpham_home();
 
     if(isset($_GET['act'])&&($_GET['act']!="")){

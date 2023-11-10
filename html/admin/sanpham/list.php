@@ -5,9 +5,10 @@
 					foreach($listsanpham as $sp){
 						extract($sp);
                         $xoasp="index.php?act=xoasp&idsp=".$id;
+						$suasp="index.php?act=updatesp&idsp=".$id;
 						$hinhpath = "../upload/".$image;
 						if(is_file($hinhpath)){
-                            $hinhpath ="<img src= '".$hinhpath."' width='150px' height='150px'>";
+                            $hinhpath ="<img src= '".$hinhpath."' width='250px' height='250px' object-fit: cover;>";
                         }else{
                             $hinhpath = "no file image";
                         }
@@ -28,7 +29,7 @@
 								<span class="old_price"><?=$giakhuyenmai?></span>
 							</div>
                             <button onclick="return confirm('bạn có muốn xóa không')"><a href="<?=$xoasp?>">XÓA</a></button>
-                            <button><a href="">SỬA</a></button>
+                            <button><a href="<?=$suasp?>">SỬA</a></button>
 						</div>
 					</div>
 				<?php
