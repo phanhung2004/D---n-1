@@ -100,21 +100,20 @@
 			</div>
 			<div class="row small-gutters">
 				<?php 
-					foreach($spnew as $sp){
+					foreach($spaopolo as $sp){
 						extract($sp);
 						$image=$img_path.$image;
-						$linksp="index.php?act=product-detail-1&idsp=".$id;
 				?>
 					<div class="col-6 col-md-4 col-xl-3">
 						<div class="grid_item">
 							<figure>
 								<!-- <span class="ribbon off"></span> -->
-								<a href="<?=$linksp?>">
+								<a href="index.php?act=product-detail-1">
 									<img class="img-fluid lazy" src="<?=$image?>"alt="">
 									<img class="img-fluid lazy" src="<?=$image?>"alt="">
 								</a>
 							</figure>
-							<a href="<?=$linksp?>">
+							<a href="index.php?act=product-detail-1">
 								<h3><?=$name?></h3>
 							</a>
 							<div class="price_box">

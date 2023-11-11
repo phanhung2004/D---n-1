@@ -23,10 +23,19 @@
         </div>
         <!-- /page_header -->
                 <div class="row justify-content-center">
+            <?php
+                if(isset($_SESSION['user'])){
+
+            ?>
                 <div class="col-xl-6 col-lg-6 col-md-8">
                     <div class="box_account">
                         <h3 class="client">Already Client</h3>
                         <div class="form_container">
+
+
+                        <form action="index.php?act=login" method="POST" enctype="multipart/form-data">
+
+
                             <div class="row no-gutters">
                                 <!-- <div class="col-lg-6 pr-lg-1">
                                     <a href="#0" class="social_bt facebook">Login with Facebook</a>
@@ -38,9 +47,23 @@
                             <!-- <div class="divider"><span>Or</span></div> -->
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" id="email" placeholder="Email*">
+                                <h6 style="color: red;">
+                                    <?php
+                                        if(isset($erroEmailLogin)&& ($erroEmailLogin!="")){
+                                            echo $erroEmailLogin;
+                                        }
+                                    ?>
+                                </h6>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password_in" id="password_in" value="" placeholder="Password*">
+                                <input type="password" class="form-control" name="password" id="password_in" value="" placeholder="Password*">
+                                <h6 style="color: red;">
+                                    <?php
+                                        if(isset($erroPassLogin)&& ($erroPassLogin!="")){
+                                            echo $erroPassLogin;
+                                        }
+                                    ?>
+                                </h6>
                             </div>
                             <div class="clearfix add_bottom_15">
                                 <!-- <div class="checkboxes float-start">
@@ -51,14 +74,29 @@
                                 </div> -->
                                 <div class="float-end"><a id="forgot" href="javascript:void(0);">Lost Password?</a></div>
                             </div>
-                            <div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"></div>
-                            <div id="forgot_pw">
+                            <div class="text-center"><input type="submit" name="login" value="Log In" class="btn_1 full-width"></div>
+                            <h6 style="color: red;">
+                                    <?php
+                                        if(isset($loginFale)&& ($loginFale!="")){
+                                            echo $loginFale;
+                                        }
+
+                                        if(isset($loginfinish)&& ($loginfinish!="")){
+                                            echo $loginfinish;
+                                        }
+
+                                    ?>
+                                </h6>
+                            <!-- <div id="forgot_pw">
                                 <div class="form-group">
                                     <input type="email" class="form-control" name="email_forgot" id="email_forgot" placeholder="Type your email">
                                 </div>
                                 <p>A new password will be sent shortly.</p>
                                 <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
-                            </div>
+                            </div> -->
+
+
+                            </form>
                         </div>
                         <!-- /form_container -->
                     </div>
@@ -80,15 +118,39 @@
                     </div>
                     <!-- /row -->
                 </div>
+                <?php
+                    }
+                ?>
                 <div class="col-xl-6 col-lg-6 col-md-8">
                     <div class="box_account">
                         <h3 class="new_client">New Client</h3> <small class="float-right pt-2">* Required Fields</small>
                         <div class="form_container">
+
+
+                        <form action="index.php?act=register" method="POST" enctype="multipart/form-data">
+
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" id="email_2" placeholder="Email*">
+                                <h6 style="color: red;">
+                                    <?php
+                                        if(isset($erroEmail)&& ($erroEmail!="")){
+                                            echo $erroEmail;
+                                        }
+                                        if(isset($erroEmail2)&& ($erroEmail2!="")){
+                                            echo $erroEmail2;
+                                        }
+                                    ?>
+                                </h6>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password_in_2" id="password_in_2" value="" placeholder="Password*">
+                                <input type="password" class="form-control" name="password" id="password_in_2" value="" placeholder="Password*">
+                                <h6 style="color: red;">
+                                    <?php
+                                        if(isset($erroPass)&& ($erroPass!="")){
+                                            echo $erroPass;
+                                        }
+                                    ?>
+                                </h6>
                             </div>
                             <hr>
                             <!-- <div class="form-group">
@@ -105,7 +167,7 @@
                                 <div class="row no-gutters">
                                     <div class="col-6 pr-1">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Name*">
+                                            <input type="text" class="form-control" name="name" placeholder="Name*">
                                         </div>
                                     </div>
                                     <!-- <div class="col-6 pl-1">
@@ -115,7 +177,7 @@
                                     </div> -->
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Full Address*">
+                                            <input type="text" class="form-control" name="diachi" placeholder="Full Address*">
                                         </div>
                                     </div>
                                 </div>
@@ -149,7 +211,7 @@
                                     </div> -->
                                     <div class="col-6 pl-1">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Telephone *">
+                                            <input type="text" class="form-control" name="sodienthoai" placeholder="Telephone *">
                                         </div>
                                     </div>
                                 </div>
@@ -157,7 +219,7 @@
                                 
                             </div>
                             <!-- /private -->
-                            <div class="company box" style="display: none;">
+                            <!-- <div class="company box" style="display: none;">
                                 <div class="row no-gutters">
                                     <div class="col-12">
                                         <div class="form-group">
@@ -169,9 +231,9 @@
                                             <input type="text" class="form-control" placeholder="Full Address">
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- /row -->
-                                <div class="row no-gutters">
+                                <!-- <div class="row no-gutters">
                                     <div class="col-6 pr-1">
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="City*">
@@ -182,9 +244,9 @@
                                             <input type="text" class="form-control" placeholder="Postal Code*">
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- /row -->
-                                <div class="row no-gutters">
+                                <!-- <div class="row no-gutters">
                                     <div class="col-6 pr-1">
                                         <div class="form-group">
                                             <div class="custom-select-form">
@@ -202,9 +264,9 @@
                                             <input type="text" class="form-control" placeholder="Telephone *">
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- /row -->
-                            </div>
+                            <!-- </div> -->
                             <!-- /company -->
                             <hr>
                             <!-- <div class="form-group">
@@ -213,7 +275,16 @@
                                     <span class="checkmark"></span>
                                 </label>
                             </div> -->
-                            <div class="text-center"><input type="submit" value="Register" class="btn_1 full-width"></div>
+                            <div class="text-center"><input type="submit" name="register" value="Register" class="btn_1 full-width"></div>
+
+
+                            <!-- //form -->
+                            </form>
+                            <h5 style="color: green;"><?php
+                                if(isset($thongbao)&&($thongbao!="")){
+                                    echo $thongbao;
+                                }
+                            ?></h5>
                         </div>
                         <!-- /form_container -->
                     </div>

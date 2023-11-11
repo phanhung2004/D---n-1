@@ -78,9 +78,9 @@
 											<div class="col-lg-3">
 												<h3>Danh mục các loại áo</h3>
 												<ul>
-													<li><a href="index.php?act=listing-grid-1-full">Áo sơ mi</a></li>
-													<li><a href="index.php?act=listing-grid-2-full">Áo phông</a></li>
-													<li><a href="index.php?act=listing-grid-3">Áo Polo</a></li>
+													<li><a href="index.php?act=home2">Áo sơ mi</a></li>
+													<li><a href="index.php?act=aophong">Áo phông</a></li>
+													<li><a href="index.php?act=aopolo">Áo Polo</a></li>
 													<!-- <li><a href="index.php?act=listing-grid-4-sidebar-left">Grid Sidebar Left</a></li>
 													<li><a href="index.php?act=listing-grid-5-sidebar-right">Grid Sidebar Right</a></li>
 													<li><a href="index.php?act=listing-grid-6-sidebar-left">Grid Sidebar Left 2</a></li>

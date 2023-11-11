@@ -39,4 +39,19 @@ function updatesp($id,$name, $price, $color, $image, $size, $mota, $soluong, $gi
   }
   pdo_execute($sql);
 }
+function load_danhmuc_aosomi(){
+  $sql = "select * from sanpham where iddm = 3";
+  $result = pdo_query($sql);
+  return $result;
+}
+function load_danhmuc_aophong(){
+  $sql = "select * from sanpham where iddm = 5";
+  $result = pdo_query($sql);
+  return $result;
+}
+function load_danhmuc_polo(){
+  $sql = "select * from sanpham where iddm = 1";
+  $result = pdo_query($sql);
+  return $result;
+}
 ?>
