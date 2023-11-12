@@ -61,31 +61,10 @@
 	                        <p>Et phaedrum temporibus per. Antiopam posidonium et est. Eu ius quas modus suavitate, ex sea feugiat laoreet voluptatum. Quo at veritus ancillae complectitur, duo no assum omnes.</p> -->
 	                    </div>
 	                </div>
+				
 	                <div class="col-lg-5">
-						<table>
-							<thead>
-								<tr>
-									<th>Màu</th>
-									<th>Size</th>
-									<th>Số lượng trong kho</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php
-									foreach($sanphamchitiet as $spct){
-										extract($spct);
-								?>
-								<tr>
-									<td><?=$color?></td>
-									<td>S</td>
-									<td>10</td>
-								</tr>
-								<?php
-									}
-								?>
-							</tbody>
-						</table>
-						<div class="row">
+					<form action="">
+						<!-- <div class="row">
 	                             <label class="col-xl-7 col-lg-5  col-md-6 col-6"><strong>Số hàng muốn mua</strong></label>
 	                            <div class="col-xl-5 col-lg-5 col-md-6 col-6">
 	                                <div class="numbers-row">
@@ -94,17 +73,17 @@
 	                                    <div class="dec button_inc">-</div>
 	                                </div>
 	                            </div>
-	                    </div>
-	                    <!-- <div class="prod_options version_2">
+	                    </div> -->
+	                    <div class="prod_options version_2">
 	                        <div class="row">
 	                            <label class="col-xl-7 col-lg-5  col-md-6 col-6 pt-0"><strong>Color</strong></label>
 	                            <div class="col-xl-5 col-lg-5 col-md-6 col-6 colors">
 	                                <ul>
 	                                    <li><a href="#0" class="color color_11 active" style="background-color: black; margin: 0 25px;"></a></li>
-	                                    <li><a href="#0" class="color color_22" style="background-color: whitesmoke; margin: 0 25px;"></a></li> -->
-	                                    <!-- <li><a href="#0" class="color color_3"></a></li>
-	                                    <li><a href="#0" class="color color_4"></a></li> -->
-	                                <!-- </ul>
+	                                    <li><a href="#0" class="color color_22" style="background-color: whitesmoke; margin: 0 25px;"></a></li>
+	                                     <!-- <li><a href="#0" class="color color_3"></a></li> -->
+	                                    <!-- <li><a href="#0" class="color color_4"></a></li> -->
+	                                </ul>
 	                            </div>
 	                        </div>
 	                        <div class="row">
@@ -137,7 +116,7 @@
 										<p style="text-align: center;margin-top: 15px;">10</p>
 	                                </div>
 	                            </div>
-	                        </div> -->
+	                        </div> 
 	                        <div class="row mt-3">
 	                            <div class="col-lg-7 col-md-6">
 	                                <div class="price_main"><span class="new_price">$148.00</span></div>
@@ -147,6 +126,7 @@
 	                            </div>
 	                        </div>
 	                    </div>
+						</form>
 	                </div>
 	            </div>
 	            <!-- /row -->

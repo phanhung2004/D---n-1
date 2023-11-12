@@ -13,6 +13,10 @@
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "dangxuat":
+                session_unset();
+                echo "<script>window.location.href = 'index.php?act=account';</script>";
+                break;
             case "login":
                 if(isset($_POST['login']) && ($_POST['login'])){
                     $email=$_POST['email'];
@@ -27,7 +31,7 @@
                         if(is_array($checkuser)){
                             $_SESSION['user']=$checkuser;
                             // $loginfinish="Đăng nhập thành công";
-                            header("location: index.php");
+                            echo "<script>window.location.href = 'index.php?act=home';</script>";
                         }else{
                             $loginFale="Đăng nhập thất bại-đăng kí hoặc quên mật khẩu";
                         }
@@ -52,8 +56,11 @@
                         if(check_existing_email($email)){
                             $erroEmail2="email đã được sử dụng";
                         }else{
-                            insert_taikhoan($email, $name, $password, $diachi, $sodienthoai);
+                            insert_taikhoan($name, $email, $sodienthoai, $diachi, $password);
                             $thongbao="Đăng kí thành công";
+                            $_SESSION['loginIn'] = true;
+                            echo "<script>window.location.href = 'index.php?act=account';</script>";
+                            // echo "<script>alert('Đăng ký thành công');</script>";
                         }
                     }
                 }

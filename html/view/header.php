@@ -146,6 +146,19 @@
 								<li>
 									<a href="#0">Tổng hợp bình luận</a>
 								</li>
+								<?php
+									if(isset($_SESSION['user'])){
+										extract($_SESSION['user']);
+										if($role==1){
+								?>
+								<li>
+										
+									<a href="">Admin</a>
+								</li>
+								<?php
+									}
+								}
+								?>
 							</ul>
 						</div>
 						<!--/main-menu -->

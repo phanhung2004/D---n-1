@@ -1,6 +1,6 @@
 <?php
-  function insert_taikhoan($name, $email, $sodienthoai, $diachi, $pass){
-    $sql = "INSERT INTO `taikhoan` (`name`, `email`, `sodienthoai`, `diachi`, `pass`) VALUES ('$name', '$email','$sodienthoai','$diachi', '$pass');";
+  function insert_taikhoan($name, $email, $sodienthoai, $diachi, $password){
+    $sql = "INSERT INTO `taikhoan` (`name`, `email`, `sodienthoai`, `diachi`, `pass`) VALUES ('$name', '$email','$sodienthoai','$diachi', '$password');";
     pdo_execute($sql);
 }
 function check_existing_email($email){
