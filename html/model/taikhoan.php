@@ -28,4 +28,9 @@ function dangxuat() {
         unset($_SESSION['user']);
     }
 }
+function loadAll_taikhoan() {
+    $sql="SELECT * FROM taikhoan";
+    $listtaikhoan=pdo_query($sql);
+    return $listtaikhoan;
+}
 ?>

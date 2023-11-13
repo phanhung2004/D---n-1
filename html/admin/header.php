@@ -78,7 +78,7 @@
 									<a href="index.php?act=listsp">San Pham</a>
 								</li>
                                 <li>
-									<a href="index.php?act=blog">Tai Khoan</a>
+									<a href="index.php?act=taikhoan">Tai Khoan</a>
 								</li>
                                 <li>
 									<a href="index.php?act=blog">Binh luan</a>

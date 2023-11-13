@@ -8,7 +8,7 @@
 						$suasp="index.php?act=updatesp&idsp=".$id;
 						$hinhpath = "../upload/".$image;
 						if(is_file($hinhpath)){
-                            $hinhpath ="<img src= '".$hinhpath."' width='250px' height='250px' object-fit: cover;>";
+                            $hinhpath ="<img src= '".$hinhpath."' width='150px' height='130px' object-fit: cover;>";
                         }else{
                             $hinhpath = "no file image";
                         }

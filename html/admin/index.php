@@ -3,10 +3,15 @@
     include "header.php";
     include "../model/sanpham.php";
     include "../model/danhmuc.php";
+    include "../model/taikhoan.php";
 
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "taikhoan":
+                $listtaikhoan=loadAll_taikhoan();
+                include "taikhoan/taikhoan.php";
+                break;
             case "updatesp":
                 if(isset($_GET['idsp']) && ($_GET['idsp'] > 0) ){
                     $sanpham=loadone_sanpham($_GET['idsp']);

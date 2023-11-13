@@ -13,6 +13,20 @@
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "sanpham":
+                if(isset($_POST['keyword']) &&  $_POST['keyword'] != 0 ){
+                    $kyw = $_POST['keyword'];
+                }else{
+                    $kyw = "";
+                }
+                if(isset($_GET['iddm']) && ($_GET['iddm']>0)){
+                    $iddm=$_GET['iddm'];
+                }else{
+                    $iddm=0;
+                }
+                $dssp=loadall_sanpham($kyw,$iddm);
+                include "view/sanpham.php";
+                break;
             case "dangxuat":
                 session_unset();
                 echo "<script>window.location.href = 'index.php?act=account';</script>";
