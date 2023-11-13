@@ -307,8 +307,39 @@
 				</div> -->
 				<!-- /col -->
 			</div>
+
 			<!-- /row -->
 		</div>
+		<div class="pagination__wrapper">
+			<?php
+				$count=lay_so_luong_san_pham();
+				$sotrang=ceil($count/8);
+				// echo $sotrang;
+			?>
+	                    <ul class="pagination">
+							<?php
+								for($i=1;$i<=$sotrang;$i++){
+
+							?>
+	                        <!-- <li><a href="#0" class="prev" title="previous page">&#10094;</a></li> -->
+	                         <li>
+	                            <a href="index.php?idpt=<?php echo $i ?>" class="active"><?=$i?></a>
+	                        </li>
+							<?php
+							}
+							?>
+	                        <!-- <li>
+	                            <a href="#0">2</a>
+	                        </li>
+	                        <li>
+	                            <a href="#0">3</a>
+	                        </li>
+	                        <li>
+	                            <a href="#0">4</a>
+	                        </li> -->
+	                        <!-- <li><a href="#0" class="next" title="next page">&#10095;</a></li> -->
+	                    </ul>
+	                </div>
 		<!-- /container -->
 
 		<div class="featured lazy" data-bg="url(img/featured_home.jpg)">

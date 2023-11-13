@@ -4,11 +4,24 @@
     include "model/sanpham.php";
     include "model/taikhoan.php";
     include "model/chitietsanpham.php";
+    include "model/phantrang.php";
 
     include "view/header.php";
     include "global.php";
 
-    $spnew = loadall_sanpham_home();
+    if(isset($_GET['idpt'])){
+        $page = $_GET['idpt'];
+    }else{
+        $page = "";
+    }
+    if($page == "" || $page == 1){
+        $begin = 0;
+    }else{
+        $begin = ($page*4)-4;
+    }
+    // echo $begin;
+    $spnew = loadall_sanpham_home($begin);
+    
 
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];

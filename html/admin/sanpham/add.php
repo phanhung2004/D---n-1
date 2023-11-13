@@ -4,16 +4,37 @@
     <div class="row2 mb10 form_content_container">
         <label> Tên Sản Phẩm </label> <br>
         <input type="text" name="name" placeholder="nhập vào tên sản phẩm">
+        <h6 style="color: red">
+            <?php
+                if(isset($erroname)){
+                    echo $erroname;
+                }
+            ?>
+        </h6>
     </div>
 
     <div class="row2 mb10 form_content_container">
         <label> Giá Sản Phẩm</label> <br>
         <input type="text" name="price" placeholder="nhập vào giá sản phẩm">
+        <h6 style="color: red">
+            <?php
+                if(isset($erroprice)){
+                    echo $erroprice;
+                }
+            ?>
+        </h6>
     </div>
 
     <div class="row2 mb10 form_content_container">
         <label> Màu sắc </label> <br>
         <input type="text" name="color" placeholder="nhập vào màu sắc sản phẩm">
+        <h6 style="color: red">
+            <?php
+                if(isset($errocolor)){
+                    echo $errocolor;
+                }
+            ?>
+        </h6>
     </div>
 
     <div class="row2 mb10 form_content_container">
@@ -24,11 +45,25 @@
     <div class="row2 mb10 form_content_container">
     <label> Kích cỡ </label> <br>
     <input type="text" name="size" placeholder="nhập vào kích cỡ">
+    <h6 style="color: red">
+            <?php
+                if(isset($errosize)){
+                    echo $errosize;
+                }
+            ?>
+        </h6>
     </div>
 
     <div class="row2 mb10 form_content_container">
     <label> Mô tả </label> <br>
     <input type="text" name="mota" placeholder="nhập vào mô tả">
+    <h6 style="color: red">
+            <?php
+                if(isset($erromota)){
+                    echo $erromota;
+                }
+            ?>
+        </h6>
     </div>
 
     <div class="row2 mb10 form_content_container">
@@ -52,16 +87,37 @@
     <div class="row2 mb10 form_content_container">
     <label> Số lương</label> <br>
     <input type="text" name="soluong">
+    <h6 style="color: red">
+            <?php
+                if(isset($errosoluong)){
+                    echo $errosoluong;
+                }
+            ?>
+        </h6>
     </div>
 
     <div class="row2 mb10 form_content_container">
     <label> Giá Gốc</label> <br>
     <input type="text" name="giagoc">
+    <h6 style="color: red">
+            <?php
+                if(isset($errogiagoc)){
+                    echo $errogiagoc;
+                }
+            ?>
+        </h6>
     </div>
 
     <div class="row2 mb10 form_content_container">
     <label> Giá khuyến mãi</label> <br>
     <input type="text" name="giakhuyenmai">
+    <h6 style="color: red">
+            <?php
+                if(isset($errogiakhuyenmai)){
+                    echo $errogiakhuyenmai;
+                }
+            ?>
+        </h6>
     </div>
     <br>
     <input class="mr20" name="themmoi" type="submit" value="THÊM MỚI">

@@ -1,6 +1,6 @@
 <?php
- function loadall_sanpham_home(){
-    $sql="select * from sanpham where 1 order by id desc limit 0,6";
+ function loadall_sanpham_home($begin){
+    $sql="select * from sanpham where 1 order by id desc limit $begin,8";
     $listsanpham=pdo_query($sql);
     return $listsanpham;
  }
@@ -54,4 +54,5 @@ function load_danhmuc_polo(){
   $result = pdo_query($sql);
   return $result;
 }
+
 ?>

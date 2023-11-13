@@ -72,7 +72,31 @@
                     $giagoc=$_POST['giagoc'];
                     $giakhuyenmai=$_POST['giakhuyenmai'];
 
-                    insert_sanpham($name, $price, $color, $image, $size, $mota, $date, $soluong, $giagoc, $giakhuyenmai, $iddm);
+                    if(empty($name)){
+                        $erroname = "chua nhập trường name";
+                    }else if(empty($price)){
+                        $erroprice = "chua nhập trường price";
+                    }else if(empty($color)){
+                        $errocolor = "chua nhập trường color";
+                    }
+                    else if(empty($size)){
+                        $errosize = "chua nhập trường size";
+                    }else if(empty($mota)){
+                        $erromota = "chua nhập trường mota";
+                    }
+                    else if(empty($soluong)){
+                        $errosoluong = "chua nhập trường soluong";
+                    }
+                    else if(empty($giagoc)){
+                        $errogiagoc = "chua nhập trường giagoc";
+                    }else if(empty($giakhuyenmai)){
+                        $errogiakhuyenmai = "chua nhập trường giakhuyenmai";
+                    }else{
+                        insert_sanpham($name, $price, $color, $image, $size, $mota, $date, $soluong, $giagoc, $giakhuyenmai, $iddm);
+                        echo "<script>window.location.href = 'index.php?act=listsp';</script>";
+                    }
+
+                    // insert_sanpham($name, $price, $color, $image, $size, $mota, $date, $soluong, $giagoc, $giakhuyenmai, $iddm);
                 }
                 $listdanhmuc = loadall_danhmuc();
                 include "sanpham/add.php";
