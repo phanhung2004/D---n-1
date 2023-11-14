@@ -1,2 +1,2 @@
 <h1>CONTROPANEL</h1>
-<input style="border: none; border-bottom: 1px solid;" type="submit" value="Thoat Admin">
+<a href="../index.php"><input type="submit" name="sua" value="THOÁT ADMIN " style="border-radius: 10px; background-color: aqua;"></a>

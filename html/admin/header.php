@@ -62,18 +62,21 @@
 								<a href="#" class="open_close" id="close_in"><i class="ti-close"></i></a>
 							</div>
 							<ul>
-                                <li>
+                                <!-- <li>
 									<a href="index.php?act=home">Home</a>
-								</li>
-								<!-- <li class="submenu">
-									<a href="" >Home</a> -->
-									<!-- <ul>
-										<li><a href="index.php?act=home">Slider</a></li>
-										<li><a href="index.php?act=index-2">Video Background</a></li>
-										<li><a href="index.php?act=index-3">Vertical Slider</a></li>
-										<li><a href="index.php?act=index-4">GDPR Cookie Bar</a></li>
-									</ul> -->
-								<!-- </li> -->
+								</li> -->
+								<li class="submenu">
+									<a href="" >Home</a> 
+									<ul>
+										<li><a href="index.php?act=home">Home</a></li>
+										<li><a href="index.php?act=danhmuc">Danh mục</a></li>
+										<!-- <li><a href="index.php?act=index-3">Vertical Slider</a></li>
+										<li><a href="index.php?act=index-4">GDPR Cookie Bar</a></li> -->
+									</ul> 
+								 </li> 
+								<!-- <li>
+									<a href="index.php?act=danhmuc">Danh mục</a>
+								</li> -->
                                 <li>
 									<a href="index.php?act=listsp">San Pham</a>
 								</li>

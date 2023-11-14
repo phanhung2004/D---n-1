@@ -5,6 +5,7 @@
     include "model/taikhoan.php";
     include "model/chitietsanpham.php";
     include "model/phantrang.php";
+    include "model/binhluan.php";
 
     include "view/header.php";
     include "global.php";
@@ -106,7 +107,25 @@
                 include "view/home2.php";
                 break;
             case "leave-review":
+                if(isset($_GET['idsp']) && $_GET['idsp'] > 0){
+                    $sanpham = loadone_sanpham($_GET['idsp']);
+                }
+                // var_dump($sanpham);
+                if(isset($_POST['guibinhluan'])){
+                    $iduser = $_SESSION['user']['id'];
+                    insert_binhluan($_POST['idpro'], $_POST['noidung'], $iduser);
+                    echo "<script>window.location.href = 'index.php?act=comfirm';</script>";
+
+                }
                 include "view/leave-review.php";
+                break;
+            case "comfirm":
+                echo "<script>
+                    setTimeout(function(){
+                    window.location.href = 'index.php?act=home';
+                    }, 3000); 
+                     </script>";
+                include "view/comfirm.php";
                 break;
             case "account":
                 include "view/account.php";
@@ -128,7 +147,7 @@
                 if(isset($_GET['idsp']) && $_GET['idsp'] > 0){
                     $sanpham = loadone_sanpham($_GET['idsp']);
                     $sanphamchitiet = loadall_chitiet($_GET['idsp']);
-                    // $sanphamcl = load_sanpham_cungloai($_GET['idsp'], $sanpham['iddm']);
+                    $sanphamcl = load_sanpham_cungloai($_GET['idsp'], $sanpham['iddm']);
                     // $binhluan = loadall_binhluan($_GET['idsp']);
                     include "view/product-detail-1.php";
                 }else{

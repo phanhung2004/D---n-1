@@ -54,5 +54,9 @@ function load_danhmuc_polo(){
   $result = pdo_query($sql);
   return $result;
 }
-
+function load_sanpham_cungloai($id, $iddm){
+  $sql = "select * from sanpham where iddm = $iddm and id <> $id";
+  $result = pdo_query($sql);
+  return $result;
+}
 ?>

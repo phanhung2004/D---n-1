@@ -256,7 +256,7 @@
 	                                </div>
 	                            </div>
 	                            <!-- /row -->
-	                            <p class="text-end"><a href="index.php?act=leave-review" class="btn_1">Leave a review</a></p>
+	                            <p class="text-end"><a href="index.php?act=leave-review&idsp=<?=$id?>" class="btn_1">Leave a review</a></p>
 	                        </div>
 	                        <!-- /card-body -->
 	                    </div>
@@ -275,34 +275,45 @@
 	            <div class="main_title">
 	                <h2>Related</h2>
 	                <span>Products</span>
-	                <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+	                <p>Sản phẩm có liên quan - Sản phẩm cùng loại.</p>
 	            </div>
+
+
 	            <div class="owl-carousel owl-theme products_carousel">
+				<?php
+				foreach($sanphamcl as $cl){
+					extract($cl);
+					$image=$img_path.$image;
+					$linksp="index.php?act=product-detail-1&idsp=".$id;
+				?>
 	                <div class="item">
 	                    <div class="grid_item">
-	                        <span class="ribbon new">New</span>
+	                        <span class="ribbon new">Cùng Loại</span>
 	                        <figure>
-	                            <a href="product-detail-1.html">
-	                                <img class="owl-lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/4.jpg" alt="">
+	                            <a href="<?=$linksp?>">
+	                                <img class="owl-lazy" src="<?=$image?>" alt="">
 	                            </a>
 	                        </figure>
-	                        <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-	                        <a href="product-detail-1.html">
-	                            <h3>ACG React Terra</h3>
+	                        <!-- <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div> -->
+	                        <a href="">
+	                            <h3><?=$name?></h3>
 	                        </a>
 	                        <div class="price_box">
-	                            <span class="new_price">$110.00</span>
+	                            <span class="new_price"><?=$price?></span>
 	                        </div>
-	                        <ul>
+	                        <!-- <ul>
 	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
 	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
 	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-	                        </ul>
+	                        </ul> -->
 	                    </div>
-	                    <!-- /grid_item -->
+	                  
 	                </div>
-	                <!-- /item -->
-	                <div class="item">
+					<?php
+					}
+					?>
+	                
+	                <!-- <div class="item">
 	                    <div class="grid_item">
 	                        <span class="ribbon new">New</span>
 	                        <figure>
@@ -323,9 +334,9 @@
 	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
 	                        </ul>
 	                    </div>
-	                    <!-- /grid_item -->
+	                    
 	                </div>
-	                <!-- /item -->
+	                
 	                <div class="item">
 	                    <div class="grid_item">
 	                        <span class="ribbon hot">Hot</span>
@@ -347,9 +358,9 @@
 	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
 	                        </ul>
 	                    </div>
-	                    <!-- /grid_item -->
+	                    
 	                </div>
-	                <!-- /item -->
+	               
 	                <div class="item">
 	                    <div class="grid_item">
 	                        <span class="ribbon off">-30%</span>
@@ -372,9 +383,9 @@
 	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
 	                        </ul>
 	                    </div>
-	                    <!-- /grid_item -->
+	                   
 	                </div>
-	                <!-- /item -->
+	                
 	                <div class="item">
 	                    <div class="grid_item">
 	                        <span class="ribbon off">-50%</span>
@@ -397,10 +408,12 @@
 	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
 	                        </ul>
 	                    </div>
-	                    <!-- /grid_item -->
-	                </div>
-	                <!-- /item -->
+	                    
+	                </div> -->
+	                
 	            </div>
+
+
 	            <!-- /products_carousel -->
 	        </div>
 	        <!-- /container -->

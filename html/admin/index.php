@@ -8,6 +8,47 @@
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "sua_danhmuc":
+                if(isset($_POST['sua']) && ($_POST['sua'])){
+                    $id=$_POST['id'];
+                    $name=$_POST['name'];
+
+                    update_danhmuc($id,$name);
+                    echo "<script>window.location.href = 'index.php?act=danhmuc';</script>";
+                }
+                include "danhmuc/danhmuc.php";
+                break;
+            case "update_danhmuc":
+                if(isset($_GET['iddm']) && ($_GET['iddm'] > 0)){
+                    $onedanhmuc=loadone_danhmuc($_GET['iddm']);
+                }
+                $listdanhmuc=loadall_danhmuc();
+                include "danhmuc/update_danhmuc.php";
+                break;
+            case "add_danhmuc":
+                if(isset($_POST['themmoi']) && ($_POST['themmoi'])){
+                    $name=$_POST['name'];
+
+                    if(empty($name)){
+                        $erroName = "chưa nhập trường danh mục";
+                    }else{
+                        insert_danhmuc($name);
+                        echo "<script>window.location.href = 'index.php?act=danhmuc';</script>";
+                    }
+                }
+                include "danhmuc/add_danhmuc.php";
+                break;
+            case "delete_danhmuc":
+                if(isset($_GET['iddm']) && ($_GET['iddm']>0)){
+                    delete_danhmuc($_GET['iddm']);
+                }
+                $listdanhmuc=loadall_danhmuc();
+                include "danhmuc/danhmuc.php";
+                break;
+            case "danhmuc":
+                $listdanhmuc=loadall_danhmuc();
+                include "danhmuc/danhmuc.php";
+                break;
             case "taikhoan":
                 $listtaikhoan=loadAll_taikhoan();
                 include "taikhoan/taikhoan.php";
@@ -122,6 +163,9 @@
 
                 $listsanpham=loadall_sanpham("", 0);
                 include "sanpham/list.php";
+                break;
+            case "home":
+                include "home.php";
                 break;
         }
     }else{
