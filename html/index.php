@@ -27,6 +27,13 @@
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "quenmatkhau":
+                if(isset($_POST['sendemail'])){
+                    $email = $_POST['email'];
+                    $sendMailMess = sendMail($email);
+                }
+                include "view/quenmatkhau.php";
+                break;
             case "sanpham":
                 if(isset($_POST['keyword']) &&  $_POST['keyword'] != 0 ){
                     $kyw = $_POST['keyword'];
@@ -87,7 +94,7 @@
                             insert_taikhoan($name, $email, $sodienthoai, $diachi, $password);
                             $thongbao="Đăng kí thành công";
                             $_SESSION['loginIn'] = true;
-                            echo "<script>window.location.href = 'index.php?act=account';</script>";
+                            echo "<script>window.location.href = 'index.php?act=comfirm';</script>";
                             // echo "<script>alert('Đăng ký thành công');</script>";
                         }
                     }
@@ -123,7 +130,7 @@
                 echo "<script>
                     setTimeout(function(){
                     window.location.href = 'index.php?act=home';
-                    }, 3000); 
+                    }, 2000); 
                      </script>";
                 include "view/comfirm.php";
                 break;
@@ -149,7 +156,8 @@
                     $sanphamchitiet = loadall_chitiet($_GET['idsp']);
                     $sanphamcl = load_sanpham_cungloai($_GET['idsp'], $sanpham['iddm']);
                     $binhluan = loadall_binhluan($_GET['idsp']);
-                    // var_dump($binhluan);
+                    // echo "<pre>";
+                    // var_dump($sanphamcl);
                     include "view/product-detail-1.php";
                 }else{
                     include "view/home.php";            

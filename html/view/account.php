@@ -275,7 +275,6 @@
                                 </label>
                             </div> -->
                             <div class="text-center"><input type="submit" name="register" value="Register" class="btn_1 full-width"></div>
-
                             <?php
                             if(isset($_SESSION['user'])){
                             ?>
@@ -288,11 +287,8 @@
 
                             <!-- //form -->
                             </form>
-                            <h5 style="color: green;"><?php
-                                if(isset($thongbao)&&($thongbao!="")){
-                                    echo "<script>alert('Đăng ký thành công');</script>";
-                                }
-                            ?></h5>
+                            <div class="text-center"><a href="index.php?act=quenmatkhau"><input type="submit" name="quenmatkhau" value="Quên Mật Khẩu" class="btn_1 full-width"></a></div>
+
                         </div>
                         <!-- /form_container -->
                     </div>
