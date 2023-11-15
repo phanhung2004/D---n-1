@@ -70,6 +70,7 @@
 									<ul>
 										<li><a href="index.php?act=home">Home</a></li>
 										<li><a href="index.php?act=danhmuc">Danh mục</a></li>
+										<!-- <li><a href="index.php?act=binhluan">Bình Luận</a></li> -->
 										<!-- <li><a href="index.php?act=index-3">Vertical Slider</a></li>
 										<li><a href="index.php?act=index-4">GDPR Cookie Bar</a></li> -->
 									</ul> 
@@ -78,16 +79,16 @@
 									<a href="index.php?act=danhmuc">Danh mục</a>
 								</li> -->
                                 <li>
-									<a href="index.php?act=listsp">San Pham</a>
+									<a href="index.php?act=listsp">Sản Phẩm</a>
 								</li>
                                 <li>
-									<a href="index.php?act=taikhoan">Tai Khoan</a>
+									<a href="index.php?act=taikhoan">Tài Khoản</a>
 								</li>
                                 <li>
-									<a href="index.php?act=blog">Binh luan</a>
+									<a href="index.php?act=binhluan">Bình Luận</a>
 								</li>
                                 <li>
-									<a href="index.php?act=blog">Thong Ke</a>
+									<a href="index.php?act=blog">Thống Kê</a>
 								</li>
 								<!-- <li class="megamenu submenu">
 									<a href="">Pages</a> -->

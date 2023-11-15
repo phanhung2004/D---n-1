@@ -148,7 +148,8 @@
                     $sanpham = loadone_sanpham($_GET['idsp']);
                     $sanphamchitiet = loadall_chitiet($_GET['idsp']);
                     $sanphamcl = load_sanpham_cungloai($_GET['idsp'], $sanpham['iddm']);
-                    // $binhluan = loadall_binhluan($_GET['idsp']);
+                    $binhluan = loadall_binhluan($_GET['idsp']);
+                    // var_dump($binhluan);
                     include "view/product-detail-1.php";
                 }else{
                     include "view/home.php";            

@@ -4,10 +4,17 @@
     include "../model/sanpham.php";
     include "../model/danhmuc.php";
     include "../model/taikhoan.php";
+    include "../model/binhluan.php";
 
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "binhluan":
+                $listbinhluan = loadall_binhluanadmin();
+                // echo "<pre>";
+                // var_dump($listbinhluan['ngaydangbinhluan']);
+                include "binhluan/binhluan.php";
+                break;
             case "sua_danhmuc":
                 if(isset($_POST['sua']) && ($_POST['sua'])){
                     $id=$_POST['id'];
