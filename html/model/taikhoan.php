@@ -33,6 +33,23 @@ function loadAll_taikhoan() {
     $listtaikhoan=pdo_query($sql);
     return $listtaikhoan;
 }
+
+function update_taikhoan($id,$username,$pass,$sodienthoai){
+    $sql="UPDATE `taikhoan` SET `username` = '$username', `sodienthoai` = '$sodienthoai', `pass` = '$pass' WHERE `taikhoan`.`id` = '$id'";
+    pdo_query_one($sql);
+    // return $onedanhmuc;
+}
+
+function loadone_taikhoan($id){
+    $sql="SELECT * FROM `taikhoan` WHERE `taikhoan`.`id` = '$id'";
+    $onetaikhoan=pdo_query_one($sql);
+    return $onetaikhoan;
+}
+
+function delete_taikhoan($id){
+    $sql = "DELETE FROM taikhoan WHERE `taikhoan`.`id` = '$id'";
+    pdo_execute($sql);
+}
 function sendMail($email){
     $sql = "SELECT * FROM `taikhoan` WHERE `email` = '$email'";
     $taikhoan = pdo_query_one($sql);

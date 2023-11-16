@@ -18,13 +18,15 @@
         $stt=0;
             foreach($listtaikhoan as $tk){
                 extract($tk);
+                $delete_taikhoan= "index.php?act=delete_taikhoan&idtk=".$id;
+                $update_taikhoan= "index.php?act=update_taikhoan&idtk=".$id;
                 $stt+=1;
         ?>
         <tr>
             <th scope="row"><?=$stt?></th>
             <td><?=$email?></td>
             <td><?=$pass?></td>
-            <td><?=$name?></td>
+            <td><?=$username?></td>
             <td><?=$sodienthoai?></td>
             <td>
                 <?php
@@ -36,8 +38,8 @@
                 ?>
             </td>
             <td>
-                <button type="button" class="btn btn-primary"><a href="">Sửa</a></button>
-                <button type="button" class="btn btn-primary"><a href="">Xóa</a></button>
+                <a href="<?=$update_taikhoan?>"><button type="button" class="btn btn-primary">Sửa</button></a>
+                <a href="<?=$delete_taikhoan?>"><button type="button" class="btn btn-danger" onclick="return confirm('bạn có muốn xóa không')" >Xóa</button></a> 
             </td>
         </tr>
         <?php

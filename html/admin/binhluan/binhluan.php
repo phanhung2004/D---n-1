@@ -19,10 +19,11 @@
         // var_dump($listbinhluan);
             foreach($listbinhluan as $bl){
                 extract($bl);
+                // echo $bl['id'];
                 $stt+=1;
                 $add_danhmuc= "index.php?act=add_danhmuc";
-                $delete_danhmuc= "index.php?act=delete_danhmuc&iddm=".$id;
-                $update_danhmuc= "index.php?act=update_danhmuc&iddm=".$id;
+                $delete_binhluan= "index.php?act=delete_binhluan&idbl=".$binhluan_id;
+                $update_binhluan= "index.php?act=update_binhluan&idbl=".$binhluan_id;
         ?>
         <tr>
             <th scope="row"><?=$stt?></th>
@@ -31,8 +32,8 @@
             <td><?=$email?></td>
             <td><?php echo date("d/m/Y", strtotime($bl['ngaydangbinhluan']))?></td>
             <td>
-                <a href="<?=$update_danhmuc?>"><button type="button" class="btn btn-primary">Sửa</button></a>
-                <a href="<?=$delete_danhmuc?>"><button type="button" class="btn btn-danger" onclick="return confirm('bạn có muốn xóa không')" >Xóa</button></a> 
+                <a href="<?=$update_binhluan?>"><button type="button" class="btn btn-primary">Sửa</button></a>
+                <a href="<?=$delete_binhluan?>"><button type="button" class="btn btn-danger" onclick="return confirm('bạn có muốn xóa không')" >Xóa</button></a> 
             </td>
         </tr>
         <?php
@@ -51,7 +52,7 @@
         </tr> -->
     </tbody>
     </table>
-    <a href="<?=$add_danhmuc?>"><button type="button" class="btn btn-success">Thêm</button></a>
+    <!-- <a href=""><button type="button" class="btn btn-success">Thêm</button></a> -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

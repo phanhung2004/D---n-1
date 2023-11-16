@@ -9,6 +9,30 @@
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "sua_binhluan":
+                if(isset($_POST['suabl']) && ($_POST['suabl'])){
+                    $id=$_POST['id'];
+                    $noidung=$_POST['noidung'];
+
+                    update_binhluan($id,$noidung);
+                    echo "<script>window.location.href = 'index.php?act=binhluan';</script>";
+                }
+                include "binhluan/binhluan.php";
+                break;
+            case "update_binhluan":
+                if(isset($_GET['idbl']) && ($_GET['idbl'] > 0)){
+                    $onebinhluan=loadone_binhluan($_GET['idbl']);
+                }
+                $listdanhmuc=loadall_danhmuc();
+                include "binhluan/update_binhluan.php";
+                break;
+            case "delete_binhluan":
+                if(isset($_GET['idbl']) && ($_GET['idbl']>0)){
+                    delete_binhluan($_GET['idbl']);
+                }
+                $listbinhluan = loadall_binhluanadmin();
+                include "binhluan/binhluan.php";
+                break;
             case "binhluan":
                 $listbinhluan = loadall_binhluanadmin();
                 // echo "<pre>";
@@ -55,6 +79,36 @@
             case "danhmuc":
                 $listdanhmuc=loadall_danhmuc();
                 include "danhmuc/danhmuc.php";
+                break;
+
+
+            case "suataikhoan":
+                if(isset($_POST['suatk']) && ($_POST['suatk'])){
+                    $id=$_POST['id'];
+                    $username=$_POST['username'];
+                    $pass=$_POST['pass'];
+                    $sodienthoai=$_POST['sodienthoai'];
+                    // $username=$_POST['username'];
+                    // echo $username;
+
+                    update_taikhoan($id,$username,$pass,$sodienthoai);
+                    echo "<script>window.location.href = 'index.php?act=taikhoan'; alert('Sửa thành công') </script>";
+                }
+                include "taikhoan/taikhoan.php";
+                break;
+            case "update_taikhoan":
+                if(isset($_GET['idtk']) && ($_GET['idtk'] > 0)){
+                    $onetaikhoan=loadone_taikhoan($_GET['idtk']);
+                }
+                $listtaikhoan=loadAll_taikhoan();
+                include "taikhoan/update_taikhoan.php";
+                break;       
+            case "delete_taikhoan":
+                if(isset($_GET['idtk']) && ($_GET['idtk']>0)){
+                    delete_taikhoan($_GET['idtk']);
+                }
+                $listtaikhoan=loadAll_taikhoan();
+                include "taikhoan/taikhoan.php";
                 break;
             case "taikhoan":
                 $listtaikhoan=loadAll_taikhoan();
@@ -171,6 +225,15 @@
                 $listsanpham=loadall_sanpham("", 0);
                 include "sanpham/list.php";
                 break;
+            // case "comfirm":
+                
+            //     echo "<script>
+            //         setTimeout(function(){
+            //         window.location.href = 'index.php?act=home';
+            //         }, 2000); 
+            //     </script>";
+            //     include "comfirm.php";
+            //     break;
             case "home":
                 include "home.php";
                 break;

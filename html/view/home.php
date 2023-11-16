@@ -604,3 +604,8 @@
 		<!-- /container -->
 	</main>
 	<!-- /main -->
+	<!-- Messenger Chat Plugin Code --> 
+	<div id="fb-root">
+
+	</div> 
+

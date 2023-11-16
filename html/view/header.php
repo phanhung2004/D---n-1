@@ -30,6 +30,7 @@
 
     <!-- YOUR CUSTOM CSS -->
     <link href="css/custom.css" rel="stylesheet">
+	<!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script> -->
 
 </head>
 
