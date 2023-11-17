@@ -6,6 +6,7 @@
     <link href="css/product_page.css" rel="stylesheet">
 
     <!-- YOUR CUSTOM CSS -->
+	<link href="css/csschitiet.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
 	<link href="css/chitietsanpham.css" rel="stylesheet">
 <main class="bg_gray">
@@ -48,7 +49,8 @@
 	    <!-- /container -->
 	    <?php
 			extract($sanpham);
-		
+			$linkgh = "index.php?act=cart&idsp=".$id;
+			extract($sanphamchitiet);
 		?>
 	    <div class="bg_white">
 	        <div class="container margin_60_35">
@@ -63,67 +65,85 @@
 	                </div>
 				
 	                <div class="col-lg-5">
-					<form action="">
-						<!-- <div class="row">
-	                             <label class="col-xl-7 col-lg-5  col-md-6 col-6"><strong>Số hàng muốn mua</strong></label>
-	                            <div class="col-xl-5 col-lg-5 col-md-6 col-6">
-	                                <div class="numbers-row">
-	                                    <input type="text" value="1" id="quantity_1" class="qty2" name="quantity_1">
-	                                    <div class="inc button_inc">+</div>
-	                                    <div class="dec button_inc">-</div>
-	                                </div>
-	                            </div>
-	                    </div> -->
+						
+					<form action="<?=$linkgh?>" method="POST" enctype="multipart/form-data">
+
 	                    <div class="prod_options version_2">
-	                        <div class="row">
-	                            <label class="col-xl-7 col-lg-5  col-md-6 col-6 pt-0"><strong>Color</strong></label>
-	                            <div class="col-xl-5 col-lg-5 col-md-6 col-6 colors">
-	                                <ul>
-	                                    <li><a href="#0" class="color color_11 active" style="background-color: black; margin: 0 25px;"></a></li>
-	                                    <li><a href="#0" class="color color_22" style="background-color: whitesmoke; margin: 0 25px;"></a></li>
-	                                     <!-- <li><a href="#0" class="color color_3"></a></li> -->
-	                                    <!-- <li><a href="#0" class="color color_4"></a></li> -->
-	                                </ul>
-	                            </div>
-	                        </div>
+						<div class="row">
+								<label class="col-xl-7 col-lg-5  col-md-6 col-6 pt-0"><strong>Color</strong></label>
+								<div class="col-xl-5 col-lg-5 col-md-6 col-6 colors">
+									<ul>
+										<li>
+											<a href="#" class="color color_11" style="background-color: black; margin: 0 25px;"></a>
+											<input type="hidden" id="selectedColor" name="selectedColor">
+										</li>
+										<li><a href="#" class="color color_22" style="background-color: whitesmoke; margin: 0 25px;"></a></li>
+										<!-- Other color options -->
+									</ul>
+								</div>
+							</div>
 	                        <div class="row">
 	                            <label class="col-xl-7 col-lg-5 col-md-6 col-6"><strong>Size</strong> - Size Guide <a href="#0" data-bs-toggle="modal" data-bs-target="#size-modal"><i class="ti-help-alt"></i></a></label>
 	                            <div class="col-xl-5 col-lg-5 col-md-6 col-6">
 	                                <div class="custom-select-form">
-	                                    <select class="wide">
-	                                        <option value="" selected="">Small (S)</option>
-	                                        <option value="">M</option>
-	                                        <option value=" ">L</option>
-	                                        <option value=" ">XL</option>
-	                                    </select>
+									<select class="wide" name="idsize" id="">
+											<option value="0" selected>S(Mặc Định)</option>
+											<?php
+												foreach($sanphamchitiet as $dm){
+													extract($dm);
+													echo '<option value="'.$id.'">'.$size.'</option>';
+												}
+											?>
+									</select>
 	                                </div>
 	                            </div>
 	                        </div>
+							<!-- <input type="hidden" id="selectedSize" name="selectedSize"> -->
+
 	                        <div class="row">
 	                             <label class="col-xl-7 col-lg-5  col-md-6 col-6"><strong>Quantity</strong></label>
 	                            <div class="col-xl-5 col-lg-5 col-md-6 col-6">
+<!-- 
 	                                <div class="numbers-row">
-	                                    <input type="text" value="1" id="quantity_1" class="qty2" name="quantity_1">
-	                                    <div class="inc button_inc">+</div>
-	                                    <div class="dec button_inc">-</div>
-	                                </div>
+	                                    <input type="text" value="1" name="quantity_1">
+	                                    <div class="inc" id="inc">+</div>
+	                                    <div class="dec" id="dec">-</div>
+	                                </div> -->
+									<div class="number-row">
+										<input type="text" value="1" name="quantity" class="quantity">
+										<div class="inc">+</div>
+										<div class="dec">-</div>
+									</div>
+
 	                            </div>
+								<!-- <input type="hidden" id="selectedQuantity" name="selectedQuantity"> -->
 	                        </div>
 							<div class="row">
 	                            <label class="col-xl-7 col-lg-5  col-md-6 col-6"><strong>Số lượng có trong kho</strong></label>
 	                            <div class="col-xl-5 col-lg-5 col-md-6 col-6">
 	                                <div class="">
-										<p style="text-align: center;margin-top: 15px;">10</p>
+										<p style="text-align: center;margin-top: 15px;"><?=$soluong?></p>
 	                                </div>
 	                            </div>
 	                        </div> 
 	                        <div class="row mt-3">
 	                            <div class="col-lg-7 col-md-6">
-	                                <div class="price_main"><span class="new_price">$148.00</span></div>
+									<!-- <span>Giá</span> -->
+	                                <div style="font-size: 24px;" class="price_main" id="productPrice"><?=$price?></div>
 	                            </div>
-	                            <div class="col-lg-5 col-md-6">
+	                            <!-- <div class="col-lg-5 col-md-6">
 	                                <div class="btn_add_to_cart"><a href="index.php?act=cart" class="btn_1">Add to Cart</a></div>
-	                            </div>
+	                            </div> -->
+								<div class="col-lg-5 col-md-6">
+									<div class="btn_add_to_cart">
+										<?php if ($soluong > 0) : ?>
+											<!-- <a href="index.php?act=cart" class="btn_1">Add to Cart</a> -->
+											<input type="submit" name="cart" class="btn_1" value="Add to Cart">
+										<?php else : ?>
+											<span class="out_of_stock">Out of Stock</span>
+										<?php endif; ?>
+									</div>
+								</div>
 	                        </div>
 	                    </div>
 						</form>
@@ -441,5 +461,54 @@
 	</main>
 	<!-- /main -->
     	<!-- COMMON SCRIPTS -->
+		<?php
+			extract($sanpham);
+
+		?>
+		<script>
+			const incButton = document.querySelector('.inc');
+			const decButton = document.querySelector('.dec');
+			const quantityInput = document.querySelector('.quantity');
+			const productPrice = document.getElementById('productPrice');
+
+			let pricePerItem = parseInt('<?=$price?>'); // Chuyển giá tiền ban đầu thành số
+
+			const availableQuantity = parseInt('<?=$soluong?>');
+
+			// Sự kiện click cho nút '+'
+			incButton.addEventListener('click', function() {
+				let value = parseInt(quantityInput.value);
+				value = isNaN(value) ? 0 : value;
+				if (value < availableQuantity) { // Kiểm tra nếu số lượng chọn nhỏ hơn số lượng có sẵn trong kho
+					quantityInput.value = value + 1;
+					updateTotalPrice(value + 1);
+				}
+			});
+
+			// Sự kiện click cho nút '-'
+			decButton.addEventListener('click', function() {
+				let value = parseInt(quantityInput.value);
+				value = isNaN(value) ? 0 : value;
+				if (value > 1) {
+					quantityInput.value = value - 1; // Giảm giá trị đi 1, nhưng không dưới 1
+					updateTotalPrice(value - 1);
+				}
+			});
+
+			function updateTotalPrice(quantity) {
+				const totalPrice = pricePerItem * quantity;
+				productPrice.textContent = totalPrice; // Hiển thị giá tiền mới sau khi cập nhật
+			}
+			const colorOptions = document.querySelectorAll('.color');
+
+			colorOptions.forEach(option => {
+				option.addEventListener('click', function() {
+					const selectedColor = this.style.backgroundColor;
+					document.getElementById('selectedColor').value = selectedColor;
+				});
+			});
+
+		</script>
+		
         <script src="js/common_scripts.min.js"></script>
-    <script src="js/main.js"></script>
+    	<script src="js/main.js"></script>

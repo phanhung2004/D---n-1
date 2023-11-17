@@ -138,6 +138,18 @@
                 include "view/account.php";
                 break;
             case "cart":
+                if(isset($_POST['cart']) && ($_POST['cart'])){
+                    $color = $_POST['selectedColor'];
+                    $size = $_POST['idsize'];
+                    $soluong = $_POST['quantity'];
+                    $id=$_GET['idsp'];
+
+                    echo $size;
+                    echo $soluong;
+                    echo $color;
+                    echo $id;
+                    
+                }
                 include "view/cart.php";
                 break;
             case "checkout":
@@ -152,8 +164,11 @@
                     // insert_binhluan($_POST['idpro'], $_POST['noidung'], $iduser);
                 }
                 if(isset($_GET['idsp']) && $_GET['idsp'] > 0){
+                    // $sizeandcolor= loadone_chitietsanpham($_GET['idsp']);
                     $sanpham = loadone_sanpham($_GET['idsp']);
                     $sanphamchitiet = loadall_chitiet($_GET['idsp']);
+                    var_dump($sanpham['price']);
+                    // var_dump($sanphamchitiet);
                     $sanphamcl = load_sanpham_cungloai($_GET['idsp'], $sanpham['iddm']);
                     $binhluan = loadall_binhluan($_GET['idsp']);
                     // echo "<pre>";

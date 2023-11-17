@@ -539,7 +539,7 @@
 					<a class="box_news" href="index.php?act=product-detail-1">
 						<figure>
 							<img src="<?=$image?>" data-src="img/blog-thumb-1.jpg" alt="" width="400" height="266" class="lazy">
-							<figcaption><strong>28</strong>Dec</figcaption>
+							<figcaption><strong>New</strong>Pro</figcaption>
 						</figure>
 						<ul>
 							<li>Số lượng: <?=$soluong?></li>

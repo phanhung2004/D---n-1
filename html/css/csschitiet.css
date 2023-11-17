@@ -1,0 +1,29 @@
+.number-row{
+    /* border: 1px solid #dddddd;
+    height: 40px;
+    width: 187px;
+    line-height: 34px;
+    padding-left: 10px; */
+    display: flex;
+}
+.quantity{
+    border: 1px solid #dddddd;
+    height: 40px;
+    width: 187px;
+    line-height: 34px;
+    padding-left: 10px;    border: 1px solid #dddddd;
+    text-align: center;
+}
+
+.inc{
+    margin: 9px -21px;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+}
+.dec{
+    margin: 9px -155px;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+}
