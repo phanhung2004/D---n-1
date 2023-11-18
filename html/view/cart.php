@@ -19,7 +19,7 @@
 			<h1>Cart page</h1>
 		</div>
 		<!-- /page_header -->
-		<table class="table table-striped cart-list">
+		<table class="table">
 							<thead>
 								<tr>
 									<th>
@@ -29,13 +29,19 @@
 										Trạng thái
 									</th>
 									<th>
-										Price
+										Size
 									</th>
 									<th>
-										Quantity
+										Số Lượng
 									</th>
 									<th>
-										Subtotal
+										Tổng Tiền
+									</th>
+									<th>
+										Màu Sắc
+									</th>
+									<th>
+
 									</th>
 									<th>
 										
@@ -44,20 +50,35 @@
 							</thead>
 							<tbody>
 								<tr>
+									<?php
+										foreach($listgiohang as $gh){
+											extract($gh);
+											$image=$img_path.$imagegiohang;
+									?>
 									<td>
 										<div class="thumb_cart">
-											<img src="img/products/product_placeholder_square_small.jpg" data-src="img/products/shoes/1.jpg" class="lazy" alt="Image">
+											<img src="<?=$imagegiohang?>" class="lazy" alt="Image">
 										</div>
-										<span class="item_cart">Armor Air x Fear</span>
+										<span class="item_cart">helo</span>
 									</td>
 									<td>
-										Đang chờ xác thực
+										<?php
+											if($trangthai==0){
+												echo "Đang xác thực";
+											}else if($trangthai==1){
+												echo "Đang đợi đơn vị vận chuyển";
+											}else if($trangthai==2){
+												echo "Đơn hàng đàn giao";
+											}else if($trangthai==3){
+												echo "Đã nhận đơn hàng";
+											}
+										?>
 									</td>
 									<td>
-										<strong>$140.00</strong>
+										<strong><?=$size?></strong>
 									</td>
 									<td>
-										<strong>2</strong>
+										<strong><?=$so_luong?></strong>
 									</td>
 									<!-- <td>
 										<div class="numbers-row">
@@ -65,13 +86,20 @@
 										<div class="inc button_inc">+</div><div class="dec button_inc">-</div></div>
 									</td> -->
 									<td>
-										<strong>$140.00</strong>
+										<strong><?=$tongtien?></strong>
+									</td>
+									<td>
+										<strong><?=$color?></strong>
 									</td>
 									<td class="options">
 										<a href="#"><i class="ti-trash"></i></a>
 									</td>
 								</tr>
-								<tr>
+								<?php
+										}
+								?>
+
+								<!-- <tr>
 									<td>
 										<div class="thumb_cart">
 											<img src="img/products/product_placeholder_square_small.jpg" data-src="img/products/shoes/2.jpg" class="lazy" alt="Image">
@@ -122,7 +150,7 @@
 									<td class="options">
 										<a href="#"><i class="ti-trash"></i></a>
 									</td>
-								</tr>
+								</tr> -->
 							</tbody>
 						</table>
 

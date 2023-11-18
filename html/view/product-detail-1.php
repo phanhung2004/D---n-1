@@ -71,6 +71,7 @@
 							extract($sanpham);
 							$image=$img_path.$image;
 						?>
+						<input type="hidden" name="price" value="<?=$price?>">
 						<input type="hidden" name="image" value="<?=$image?>">
 	                    <div class="prod_options version_2">
 						<div class="row">
@@ -91,11 +92,11 @@
 	                            <div class="col-xl-5 col-lg-5 col-md-6 col-6">
 	                                <div class="custom-select-form">
 									<select class="wide" name="idsize" id="">
-											<option value="0" selected>S(Mặc Định)</option>
+											<option value="1" selected>Chọn Size</option>
 											<?php
 												foreach($sanphamchitiet as $dm){
 													extract($dm);
-													echo '<option value="'.$id.'">'.$size.'</option>';
+													echo '<option value="'.$size.'">'.$size.'</option>';
 												}
 											?>
 									</select>
@@ -117,8 +118,9 @@
 										<input type="text" value="1" name="quantity" class="quantity">
 										<div class="inc">+</div>
 										<div class="dec">-</div>
+										<!-- <input type="hidden" name="soluong" id="soluong"> -->
 									</div>
-
+									
 	                            </div>
 								<!-- <input type="hidden" id="selectedQuantity" name="selectedQuantity"> -->
 	                        </div>
@@ -133,7 +135,8 @@
 	                        <div class="row mt-3">
 	                            <div class="col-lg-7 col-md-6">
 									<!-- <span>Giá</span> -->
-	                                <div style="font-size: 24px;" class="price_main" id="productPrice"><?=$price?></div>
+	                                <div style="font-size: 24px;" class="price_main"id="productPrice"><?=$price?></div>
+									<input type="hidden" name="tongtien" id="tongtien_input">
 	                            </div>
 	                            <!-- <div class="col-lg-5 col-md-6">
 	                                <div class="btn_add_to_cart"><a href="index.php?act=cart" class="btn_1">Add to Cart</a></div>
@@ -498,11 +501,44 @@
 					updateTotalPrice(value - 1);
 				}
 			});
+			// var soluong = 1;
 
 			function updateTotalPrice(quantity) {
-				const totalPrice = pricePerItem * quantity;
-				productPrice.textContent = totalPrice; // Hiển thị giá tiền mới sau khi cập nhật
+			let totalPrice = pricePerItem * quantity;
+
+			if (quantity === 1) {
+				totalPrice = pricePerItem; 
+				document.getElementById('tongtien_input').value = totalPrice;// Gán lại giá trị mới cho totalPrice nếu quantity là 1
 			}
+
+			productPrice.textContent = totalPrice;
+			document.getElementById('tongtien_input').value = totalPrice;
+		}
+
+			// function updateTotalPrice(quantity) {
+			// 	const totalPrice = pricePerItem * quantity;
+			// 	productPrice.textContent = totalPrice;
+			// 	 // Hiển thị giá tiền mới sau khi cập nhật
+			// 	if (quantity === 1) {
+			// 	totalPrice = pricePerItem * quantity; // Gán lại giá trị mới cho totalPrice nếu quantity là 1
+			// 	}
+
+			// 	productPrice.textContent = totalPrice;
+			// 	document.getElementById('tongtien_input').value = totalPrice;
+			// }
+
+			// function updateTotalPrice(quantity) {
+			// let totalPrice = pricePerItem * quantity; // Sử dụng let để khai báo biến totalPrice
+
+			// if (quantity === 1) {
+			// 	totalPrice = pricePerItem; // Gán lại giá trị mới cho totalPrice nếu quantity là 1
+			// }
+
+			// productPrice.textContent = totalPrice;
+			// document.getElementById('tongtien_input').value = totalPrice;
+			// }
+
+
 			const colorOptions = document.querySelectorAll('.color');
 
 			colorOptions.forEach(option => {

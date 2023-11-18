@@ -6,6 +6,7 @@
     include "model/chitietsanpham.php";
     include "model/phantrang.php";
     include "model/binhluan.php";
+    include "model/giohang.php";
 
     include "view/header.php";
     include "global.php";
@@ -142,12 +143,27 @@
                     $color = $_POST['selectedColor'];
                     $size = $_POST['idsize'];
                     $soluong = $_POST['quantity'];
+                    if($soluong == 1){
+                        $tongtien=$_POST['price'];
+                    }else{
+                        $tongtien=$_POST['tongtien'];
+                    }
                     $id=$_GET['idsp'];
                     $image=$_POST['image'];
                     $iduser=$_SESSION['user']['id'];
+                    
                     echo $iduser;
+                    echo $color;
+                    echo $size;
+                    echo $soluong;
+                    echo $id;
+                    echo $image;
+                    echo $tongtien;
                     
                 }
+                $listgiohang = loadall_giohang();
+                // echo "<pre>";
+                // var_dump($listgiohang);
                 include "view/cart.php";
                 break;
             case "checkout":
