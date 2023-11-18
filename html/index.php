@@ -143,11 +143,9 @@
                     $size = $_POST['idsize'];
                     $soluong = $_POST['quantity'];
                     $id=$_GET['idsp'];
-
-                    echo $size;
-                    echo $soluong;
-                    echo $color;
-                    echo $id;
+                    $image=$_POST['image'];
+                    $iduser=$_SESSION['user']['id'];
+                    echo $iduser;
                     
                 }
                 include "view/cart.php";

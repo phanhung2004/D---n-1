@@ -57,10 +57,13 @@
 										<strong>$140.00</strong>
 									</td>
 									<td>
+										<strong>2</strong>
+									</td>
+									<!-- <td>
 										<div class="numbers-row">
 											<input type="text" value="1" id="quantity_1" class="qty2" name="quantity_1">
 										<div class="inc button_inc">+</div><div class="dec button_inc">-</div></div>
-									</td>
+									</td> -->
 									<td>
 										<strong>$140.00</strong>
 									</td>

@@ -67,7 +67,11 @@
 	                <div class="col-lg-5">
 						
 					<form action="<?=$linkgh?>" method="POST" enctype="multipart/form-data">
-
+						<?php
+							extract($sanpham);
+							$image=$img_path.$image;
+						?>
+						<input type="hidden" name="image" value="<?=$image?>">
 	                    <div class="prod_options version_2">
 						<div class="row">
 								<label class="col-xl-7 col-lg-5  col-md-6 col-6 pt-0"><strong>Color</strong></label>
