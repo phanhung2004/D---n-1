@@ -142,14 +142,29 @@
 	                                <div class="btn_add_to_cart"><a href="index.php?act=cart" class="btn_1">Add to Cart</a></div>
 	                            </div> -->
 								<div class="col-lg-5 col-md-6">
+									<?php
+										if(isset($_SESSION['user'])){
+											// echo '
+											// <div class="btn_add_to_cart">
+											// 	<!-- <a href="index.php?act=cart" class="btn_1">Add to Cart</a> -->
+											// 	<input type="submit" name="cart" class="btn_1" value="Add to Cart">
+		
+											// 	<span class="out_of_stock">Out of Stock</span>
+
+											// '
+									?>
 									<div class="btn_add_to_cart">
-										<?php if ($soluong > 0) : ?>
+										<?php 						
+										if ($soluong > 0) : ?>
 											<!-- <a href="index.php?act=cart" class="btn_1">Add to Cart</a> -->
 											<input type="submit" name="cart" class="btn_1" value="Add to Cart">
 										<?php else : ?>
 											<span class="out_of_stock">Out of Stock</span>
 										<?php endif; ?>
 									</div>
+									<?php
+									}
+									?>
 								</div>
 	                        </div>
 	                    </div>

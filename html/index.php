@@ -138,10 +138,26 @@
             case "account":
                 include "view/account.php";
                 break;
+            case "deletecart":
+                if(isset($_GET['idgh'])){
+
+                }
+                include "view/cart.php";
+                break;
             case "cart":
                 if(isset($_POST['cart']) && ($_POST['cart'])){
                     $color = $_POST['selectedColor'];
+                    if($color==""){
+                        $color="Đen";
+                    }else if($color=="black"){
+                        $color="Đen";
+                    }else if($color=="whitesmoke"){
+                        $color="Trắng";
+                    }
                     $size = $_POST['idsize'];
+                    if($size == 1){
+                        $size="S";
+                    }
                     $soluong = $_POST['quantity'];
                     if($soluong == 1){
                         $tongtien=$_POST['price'];
@@ -152,6 +168,7 @@
                     $image=$_POST['image'];
                     $iduser=$_SESSION['user']['id'];
                     
+                    insert_giohang($id, $iduser, $color, $size, $soluong, $image, $tongtien);
                     echo $iduser;
                     echo $color;
                     echo $size;
@@ -161,7 +178,7 @@
                     echo $tongtien;
                     
                 }
-                $listgiohang = loadall_giohang();
+                $listgiohang = loadall_giohang($_SESSION['user']['id']);
                 // echo "<pre>";
                 // var_dump($listgiohang);
                 include "view/cart.php";

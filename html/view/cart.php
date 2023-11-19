@@ -54,12 +54,13 @@
 										foreach($listgiohang as $gh){
 											extract($gh);
 											$image=$img_path.$imagegiohang;
+											$linkdelete="index.php?act=deletecart&idgh=".$gh['id'];
 									?>
 									<td>
 										<div class="thumb_cart">
 											<img src="<?=$imagegiohang?>" class="lazy" alt="Image">
 										</div>
-										<span class="item_cart">helo</span>
+										<span class="item_cart"><?=$name?></span>
 									</td>
 									<td>
 										<?php
@@ -75,7 +76,7 @@
 										?>
 									</td>
 									<td>
-										<strong><?=$size?></strong>
+										<strong><?=$size_giohang?></strong>
 									</td>
 									<td>
 										<strong><?=$so_luong?></strong>
@@ -89,10 +90,10 @@
 										<strong><?=$tongtien?></strong>
 									</td>
 									<td>
-										<strong><?=$color?></strong>
+										<strong><?=$color_giohang?></strong>
 									</td>
 									<td class="options">
-										<a href="#"><i class="ti-trash"></i></a>
+										<a href="<?=$linkdelete?>"><i class="ti-trash"></i></a>
 									</td>
 								</tr>
 								<?php
