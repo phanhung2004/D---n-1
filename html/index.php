@@ -116,7 +116,7 @@
                 break;
             case "leave-review":
                 if(isset($_GET['idsp']) && $_GET['idsp'] > 0){
-                    $sanpham = loadone_sanpham($_GET['idsp']);
+                    $sanphambinhluan = loadone_sanpham($_GET['idsp']);
                 }
                 // var_dump($sanpham);
                 if(isset($_POST['guibinhluan'])){

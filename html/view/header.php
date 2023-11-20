@@ -257,11 +257,16 @@
 					</div>
 					<div class="col-xl-3 col-lg-2 col-md-3">
 						<ul class="top_tools">
+							<?php
+								if(isset($_SESSION['user'])){
+
+								
+							?>
 							<li>
 								<div class="dropdown dropdown-cart">
 									<a href="index.php?act=cart" class="cart_bt"><strong>2</strong></a>
 									<div class="dropdown-menu">
-										<ul>
+										<!-- <ul>
 											<li>
 												<a href="product-detail-1.html">
 													<figure><img src="img/products/product_placeholder_square_small.jpg" data-src="img/products/shoes/thumb/1.jpg" alt="" width="50" height="50" class="lazy"></figure>
@@ -276,15 +281,51 @@
 												</a>
 												<a href="0" class="action"><i class="ti-trash"></i></a>
 											</li>
-										</ul>
+										</ul> -->
 										<div class="total_drop">
 											<div class="clearfix"><strong>Total</strong><span>$200.00</span></div>
 											<a href="index.php?act=cart" class="btn_1 outline">View Cart</a><a href="index.php?act=checkout" class="btn_1">Checkout</a>
 										</div>
 									</div>
 								</div>
-								<!-- /dropdown-cart-->
+								
 							</li>
+							<?php
+								}else{
+									
+								
+							?>
+								<li>
+								<div class="dropdown dropdown-cart">
+									<a href="index.php?act=account" class="cart_bt"><strong>2</strong></a>
+									<div class="dropdown-menu">
+										<!-- <ul>
+											<li>
+												<a href="product-detail-1.html">
+													<figure><img src="img/products/product_placeholder_square_small.jpg" data-src="img/products/shoes/thumb/1.jpg" alt="" width="50" height="50" class="lazy"></figure>
+													<strong><span>1x Armor Air x Fear</span>$90.00</strong>
+												</a>
+												<a href="#0" class="action"><i class="ti-trash"></i></a>
+											</li>
+											<li>
+												<a href="product-detail-1.html">
+													<figure><img src="img/products/product_placeholder_square_small.jpg" data-src="img/products/shoes/thumb/2.jpg" alt="" width="50" height="50" class="lazy"></figure>
+													<strong><span>1x Armor Okwahn II</span>$110.00</strong>
+												</a>
+												<a href="0" class="action"><i class="ti-trash"></i></a>
+											</li>
+										</ul> -->
+										<div class="total_drop">
+											<div class="clearfix"><strong>Total</strong><span>$200.00</span></div>
+											<a href="index.php?act=cart" class="btn_1 outline">View Cart</a><a href="index.php?act=checkout" class="btn_1">Checkout</a>
+										</div>
+									</div>
+								</div>
+								
+							</li>
+							<?php
+								}
+							?>
 							<li>
 								<a href="#0" class="wishlist"><span>Wishlist</span></a>
 							</li>

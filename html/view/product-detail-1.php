@@ -259,6 +259,8 @@
 							<?php
 								foreach($binhluan as $bl){
 									extract($bl);
+									extract($sanpham);
+									
 							?>
 	                            <div class="row justify-content-between">
 	                                <div class="col-lg-5">
