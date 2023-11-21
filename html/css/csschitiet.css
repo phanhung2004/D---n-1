@@ -27,3 +27,9 @@
     height: 22px;
     cursor: pointer;
 }
+.transparent-input {
+    background-color: rgba(255, 255, 255, 0.5); /* Màu trắng có độ trong suốt 50% */
+    border: 1px solid #ccc; /* Border có thể thêm để tạo đường viền cho input */
+    padding: 10px; /* Có thể thay đổi padding tùy ý */
+    color: #333; /* Màu chữ */
+}

@@ -24,8 +24,12 @@
 	</div>
 	<!-- /page_header -->
 			<div class="row">
+
 				<div class="col-lg-4 col-md-6">
 					<div class="step first">
+					<?php
+					if(!isset($_SESSION['user'])){
+				?>
 						<h3>1. User Info and Billing address</h3>
 					<ul class="nav nav-tabs" id="tab_checkout" role="tablist">
 					  <li class="nav-item">
@@ -35,137 +39,91 @@
 						<a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#tab_2" role="tab" aria-controls="tab_2" aria-selected="false">Login</a>
 					  </li>
 					</ul>
+
+					<form action="index.php?act=register_giohang" method="POST" enctype="multipart/form-data">
+
 					<div class="tab-content checkout">
 						<div class="tab-pane fade show active" id="tab_1" role="tabpanel" aria-labelledby="tab_1">
 							<div class="form-group">
-								<input type="email" class="form-control" placeholder="Email">
+								<input type="email" name="email" class="form-control" placeholder="Email">
+								<h6 style="color: red;">
+                                    <?php
+                                        if(isset($erroEmail)&& ($erroEmail!="")){
+                                            echo $erroEmail;
+                                        }
+                                        if(isset($erroEmail2)&& ($erroEmail2!="")){
+                                            echo $erroEmail2;
+                                        }
+                                    ?>
+                                </h6>
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control" placeholder="Password">
+								<input type="password" name="password" class="form-control" placeholder="Password">
+                                <h6 style="color: red;">
+                                    <?php
+                                        if(isset($erroPass)&& ($erroPass!="")){
+                                            echo $erroPass;
+                                        }
+                                    ?>
+                                </h6>
 							</div>
 							<hr>
 							<div class="row no-gutters">
 								<div class="col-6 form-group pr-1">
-									<input type="text" class="form-control" placeholder="Name">
+									<input type="text" name="name" class="form-control" placeholder="Name">
 								</div>
-								<!-- <div class="col-6 form-group pl-1">
-									<input type="text" class="form-control" placeholder="Last Name">
-								</div> -->
+
 							</div>
 							<!-- /row -->
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Full Address">
+								<input type="text" name="diachi" class="form-control" placeholder="Full Address">
 							</div>
-							<div class="row no-gutters">
-								<!-- <div class="col-6 form-group pr-1">
-									<input type="text" class="form-control" placeholder="City">
-								</div> -->
-								<!-- <div class="col-6 form-group pl-1">
-									<input type="text" class="form-control" placeholder="Postal code">
-								</div> -->
-							</div>
-							<!-- /row -->
-							<!-- <div class="row no-gutters">
-								<div class="col-md-12 form-group">
-									<div class="custom-select-form">
-										<select class="wide add_bottom_15" name="country" id="country">
-											<option value="" selected>Country</option>
-											<option value="Europe">Europe</option>
-											<option value="United states">United states</option>
-											<option value="Asia">Asia</option>
-										</select>
-									</div>
-								</div>
-							</div> -->
-							<!-- /row -->
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Telephone">
+								<input type="text" name="sodienthoai" class="form-control" placeholder="Telephone">
 							</div>
+
+							<input type="submit" name="register" class="btn_1 full-width" value="Đăng kí">
 							<hr>
-							<!-- <div class="form-group">
-								<label class="container_check" id="other_addr">Other billing address
-								  <input type="checkbox">
-								  <span class="checkmark"></span>
-								</label>
-							</div> -->
-							<div id="other_addr_c" class="pt-2">
-							<div class="row no-gutters">
-								<div class="col-6 form-group pr-1">
-									<input type="text" class="form-control" placeholder="Name">
-								</div>
-								<!-- <div class="col-6 form-group pl-1">
-									<input type="text" class="form-control" placeholder="Last Name">
-								</div> -->
-							</div>
-							<!-- /row -->
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Full Address">
-							</div>
-							<div class="row no-gutters">
-								<!-- <div class="col-6 form-group pr-1">
-									<input type="text" class="form-control" placeholder="City">
-								</div>
-								<div class="col-6 form-group pl-1">
-									<input type="text" class="form-control" placeholder="Postal code">
-								</div> -->
-							</div>
-							<!-- /row -->
-							<!-- <div class="row no-gutters">
-								<div class="col-md-12 form-group">
-									<div class="custom-select-form">
-										<select class="wide add_bottom_15" name="country" id="country_2">
-											<option value="" selected>Country</option>
-											<option value="Europe">Europe</option>
-											<option value="United states">United states</option>
-											<option value="Asia">Asia</option>
-										</select>
-									</div>
-								</div>
-							</div> -->
-							<!-- /row -->
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Telephone">
-							</div>
-							</div>
-							<!-- /other_addr_c -->
+
 							<hr>
 						</div>
+
+						</form>
+
+
 						<!-- /tab_1 -->
+					<form action="index.php?act=login_giohang" method="POST" enctype="multipart/form-data">
 					  <div class="tab-pane fade" id="tab_2" role="tabpanel" aria-labelledby="tab_2" style="position: relative;">
 						  <!-- <a href="#0" class="social_bt facebook">Login con Facebook</a>
 						  <a href="#0" class="social_bt google">Login con Google</a> -->
 						  <div class="form-group">
-								<input type="email" class="form-control" placeholder="Email">
+								<input type="email" name="email" class="form-control" placeholder="Email">
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control" placeholder="Password" name="password_in" id="password_in">
-							</div>
-						  	<div class="clearfix add_bottom_15">
-								<!-- <div class="checkboxes float-start">
-									<label class="container_check">Remember me
-										<input type="checkbox">
-										<span class="checkmark"></span>
-									</label>
-								</div> -->
-								<div class="float-end"><a id="forgot" href="#0">Lost Password?</a></div>
-							</div>
-							  <div id="forgot_pw">
-								<div class="form-group">
-									<input type="email" class="form-control" name="email_forgot" id="email_forgot" placeholder="Type your email">
-								</div>
-								<p>A new password will be sent shortly.</p>
-								<div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+								<input type="password" class="form-control" placeholder="Password" name="password" id="password_in">
 							</div>
 							<hr>
-						  	<input type="submit" class="btn_1 full-width" value="Login">
+						  	<input type="submit" name="login_giohang" class="btn_1 full-width" value="Đăng nhập">
+							  <h6 style="color: red;">
+                                    <?php
+                                        if(isset($loginFale)&& ($loginFale!="")){
+                                            echo $loginFale;
+                                        }
+                                    ?>
+                                </h6>
 						</div>
+						</form>
 						<!-- /tab_2 -->
 					</div>	
+					<?php
+					}
+					?>
 					</div>
+
 					<!-- /step -->
 				</div>
 				<div class="col-lg-4 col-md-6">
-					<!-- <div class="step middle payments">
+					 <div class="step middle payments">
 						<h3>2. Payment and Shipping</h3>
 							<ul>
 								<li>
@@ -213,8 +171,8 @@
 								</li>
 								
 							</ul>
-						
-					</div> -->
+					
+					</div> 
 					<!-- /step -->
 					
 				</div>

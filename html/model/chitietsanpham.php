@@ -4,4 +4,5 @@
         $list_chitiet = pdo_query($sql);
         return $list_chitiet;
     }
+    
 ?>

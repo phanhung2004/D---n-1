@@ -22,4 +22,5 @@ function update_danhmuc($id, $name){
     pdo_query_one($sql);
     // return $onedanhmuc;
 }
+
 ?>

@@ -163,6 +163,20 @@
 										<?php endif; ?>
 									</div>
 									<?php
+									}else{
+									?>
+
+									<div class="btn_add_to_cart">
+										<?php 						
+										if ($soluong > 0) : ?>
+											<!-- <a href="index.php?act=cart" class="btn_1">Add to Cart</a> -->
+											<input type="submit" name="cart_review" class="btn_1" value="Add to Cart">
+										<?php else : ?>
+											<span class="out_of_stock">Out of Stock</span>
+										<?php endif; ?>
+									</div>
+
+									<?php
 									}
 									?>
 								</div>
@@ -356,18 +370,13 @@
 	                                <img class="owl-lazy" src="<?=$imagecl?>" alt="">
 	                            </a>
 	                        </figure>
-	                        <!-- <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div> -->
 	                        <a href="">
 	                            <h3><?=$name?></h3>
 	                        </a>
 	                        <div class="price_box">
 	                            <span class="new_price"><?=$price?></span>
 	                        </div>
-	                        <!-- <ul>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-	                        </ul> -->
+
 	                    </div>
 	                  
 	                </div>
@@ -375,116 +384,13 @@
 					}
 					?>
 	                
-	                <!-- <div class="item">
-	                    <div class="grid_item">
-	                        <span class="ribbon new">New</span>
-	                        <figure>
-	                            <a href="product-detail-1.html">
-	                                <img class="owl-lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/5.jpg" alt="">
-	                            </a>
-	                        </figure>
-	                        <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-	                        <a href="product-detail-1.html">
-	                            <h3>Air Zoom Alpha</h3>
-	                        </a>
-	                        <div class="price_box">
-	                            <span class="new_price">$140.00</span>
-	                        </div>
-	                        <ul>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-	                        </ul>
-	                    </div>
-	                    
-	                </div>
-	                
-	                <div class="item">
-	                    <div class="grid_item">
-	                        <span class="ribbon hot">Hot</span>
-	                        <figure>
-	                            <a href="product-detail-1.html">
-	                                <img class="owl-lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/8.jpg" alt="">
-	                            </a>
-	                        </figure>
-	                        <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-	                        <a href="product-detail-1.html">
-	                            <h3>Air Color 720</h3>
-	                        </a>
-	                        <div class="price_box">
-	                            <span class="new_price">$120.00</span>
-	                        </div>
-	                        <ul>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-	                        </ul>
-	                    </div>
-	                    
-	                </div>
-	               
-	                <div class="item">
-	                    <div class="grid_item">
-	                        <span class="ribbon off">-30%</span>
-	                        <figure>
-	                            <a href="product-detail-1.html">
-	                                <img class="owl-lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/2.jpg" alt="">
-	                            </a>
-	                        </figure>
-	                        <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-	                        <a href="product-detail-1.html">
-	                            <h3>Okwahn II</h3>
-	                        </a>
-	                        <div class="price_box">
-	                            <span class="new_price">$90.00</span>
-	                            <span class="old_price">$170.00</span>
-	                        </div>
-	                        <ul>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-	                        </ul>
-	                    </div>
-	                   
-	                </div>
-	                
-	                <div class="item">
-	                    <div class="grid_item">
-	                        <span class="ribbon off">-50%</span>
-	                        <figure>
-	                            <a href="product-detail-1.html">
-	                                <img class="owl-lazy" src="img/products/product_placeholder_square_medium.jpg" data-src="img/products/shoes/3.jpg" alt="">
-	                            </a>
-	                        </figure>
-	                        <div class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star"></i></div>
-	                        <a href="product-detail-1.html">
-	                            <h3>Air Wildwood ACG</h3>
-	                        </a>
-	                        <div class="price_box">
-	                            <span class="new_price">$75.00</span>
-	                            <span class="old_price">$155.00</span>
-	                        </div>
-	                        <ul>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to compare"><i class="ti-control-shuffle"></i><span>Add to compare</span></a></li>
-	                            <li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to cart"><i class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
-	                        </ul>
-	                    </div>
-	                    
-	                </div> -->
 	                
 	            </div>
-
-
-	            <!-- /products_carousel -->
 	        </div>
-	        <!-- /container -->
-	    </div>
-	    <!-- /bg_white -->
 
+	    </div>
 	</main>
-	<!-- /main -->
-    	<!-- COMMON SCRIPTS -->
+
 		<?php
 			extract($sanpham);
 
@@ -532,28 +438,6 @@
 			document.getElementById('tongtien_input').value = totalPrice;
 		}
 
-			// function updateTotalPrice(quantity) {
-			// 	const totalPrice = pricePerItem * quantity;
-			// 	productPrice.textContent = totalPrice;
-			// 	 // Hiển thị giá tiền mới sau khi cập nhật
-			// 	if (quantity === 1) {
-			// 	totalPrice = pricePerItem * quantity; // Gán lại giá trị mới cho totalPrice nếu quantity là 1
-			// 	}
-
-			// 	productPrice.textContent = totalPrice;
-			// 	document.getElementById('tongtien_input').value = totalPrice;
-			// }
-
-			// function updateTotalPrice(quantity) {
-			// let totalPrice = pricePerItem * quantity; // Sử dụng let để khai báo biến totalPrice
-
-			// if (quantity === 1) {
-			// 	totalPrice = pricePerItem; // Gán lại giá trị mới cho totalPrice nếu quantity là 1
-			// }
-
-			// productPrice.textContent = totalPrice;
-			// document.getElementById('tongtien_input').value = totalPrice;
-			// }
 
 
 			const colorOptions = document.querySelectorAll('.color');

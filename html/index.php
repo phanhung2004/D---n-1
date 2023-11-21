@@ -86,7 +86,7 @@
 
                     if(!filter_var($email, FILTER_VALIDATE_EMAIL) && $email==""){
                         $erroEmail="email không hợp lệ";
-                    }else if(strlen($password) < 8 && ($password=="")){
+                    }else if(strlen($password) < 8 || ($password=="")){
                         $erroPass="pass không hợp lệ";
                     }else {
                         if(check_existing_email($email)){
@@ -144,6 +144,10 @@
                 }
                 include "view/cart.php";
                 break;
+            case "cart_review":
+
+                include "view/cart.php";
+                break;
             case "cart":
                 if(isset($_POST['cart']) && ($_POST['cart'])){
                     $color = $_POST['selectedColor'];
@@ -178,12 +182,122 @@
                     echo $tongtien;
                     
                 }
-                $listgiohang = loadall_giohang($_SESSION['user']['id']);
+                if(isset($_POST['cart_review']) && ($_POST['cart_review'])){
+                    $color = $_POST['selectedColor'];
+                    if($color==""){
+                        $color="Đen";
+                    }else if($color=="black"){
+                        $color="Đen";
+                    }else if($color=="whitesmoke"){
+                        $color="Trắng";
+                    }
+                    $size = $_POST['idsize'];
+                    if($size == 1){
+                        $size="S";
+                    }
+                    $soluong = $_POST['quantity'];
+                    if($soluong == 1){
+                        $tongtien=$_POST['price'];
+                    }else{
+                        $tongtien=$_POST['tongtien'];
+                    }
+                    $id=$_GET['idsp'];
+                    $image=$_POST['image'];
+
+                    
+                    // echo $iduser;
+                    echo $color;
+                    echo $size;
+                    echo $soluong;
+                    echo $id;
+                    echo $image;
+                    echo $tongtien;
+                    insert_giohanguser($id, $color, $size, $soluong, $image, $tongtien);
+                    // $product = array(
+                    //     'id' => $id,
+                    //     'color' => $color,
+                    //     'size' => $size,
+                    //     'soluong' => $soluong,
+                    //     'image' => $image,
+                    //     'tongtien' => $tongtien
+                    // );
+                    // if(!isset($_SESSION['cart_item'])){
+                    //     $_SESSION['cart_item'] = array();
+                    // }
+                    // $_SESSION['cart_item'][] = $product;
+                    // var_dump($_SESSION['cart_item']);
+                }
+                if(isset($_SESSION['user'])){
+                    $listgiohang = loadall_giohang($_SESSION['user']['id']);
+                }else{
+                    $listgiohang = loadall_giohanguser();
+                }
                 // echo "<pre>";
                 // var_dump($listgiohang);
                 include "view/cart.php";
                 break;
+            case "register_giohang":
+                    if(isset($_POST['register']) && ($_POST['register'])){
+                    
+                        $email=$_POST['email'];
+                        $password=$_POST['password'];
+                        $name=$_POST['name'];
+                        $diachi=$_POST['diachi'];
+                        $sodienthoai=$_POST['sodienthoai'];
+    
+                        if(!filter_var($email, FILTER_VALIDATE_EMAIL) && $email==""){
+                            $erroEmail="email không hợp lệ";
+                        }else if(strlen($password) < 8 || ($password=="")){
+                            $erroPass="pass không hợp lệ";
+                        }else {
+                            if(check_existing_email($email)){
+                                $erroEmail2="email đã được sử dụng";
+                            }else{
+                                insert_taikhoan($name, $email, $sodienthoai, $diachi, $password);
+                                $thongbao="Đăng kí thành công";
+                                $_SESSION['loginIn'] = true;
+                                echo "<script>window.location.href = 'index.php?act=checkout';</script>";
+                                echo "<script>alert('Đăng ký thành công');</script>";
+                            }
+                        }
+                    }
+                include "view/account.php";
+                break;
+            case "login_giohang":
+                    if(isset($_POST['login_giohang']) && ($_POST['login_giohang'])){
+                        $email=$_POST['email'];
+                        $password=$_POST['password'];
+    
+                        if(!filter_var($email, FILTER_VALIDATE_EMAIL) && $email==""){
+                            $erroEmailLogin="email không hợp lệ";
+                        }else if(strlen($password) < 8 && ($password=="")){
+                            $erroPassLogin="pass không hợp lệ";
+                        }else{
+                            $checkuser=checkuser($email, $password);
+                            if(is_array($checkuser)){
+                                $_SESSION['user']=$checkuser;
+
+                                $iduser=$_SESSION['user']['id'];
+                                $listgiohanguser=loadall_giohanguser();
+                                if(!empty($listgiohanguser)){
+                                    foreach($listgiohanguser as $cartItem){
+                                        insert_giohang($cartItem['id_sanpham1'], $iduser, $cartItem['color_giohang'], $cartItem['size_giohang'], $cartItem['so_luong'], $cartItem['imagegiohang'], $cartItem['tongtien']);
+                                    }
+                                    clear_giohanguser();
+                                }
+                                // $loginfinish="Đăng nhập thành công";
+                                echo "<script>window.location.href = 'index.php?act=checkout';</script>";
+                            }else{
+                                $loginFale="Đăng nhập thất bại-đăng kí hoặc quên mật khẩu";
+                            }
+                        }
+                    }
+
+                include "view/checkout.php";
+                break;
             case "checkout":
+                
+                // var_dump($_SESSION['user']['id']);
                 include "view/checkout.php";
                 break;
             case "blog":
