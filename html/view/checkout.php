@@ -122,50 +122,42 @@
 
 					<!-- /step -->
 				</div>
+
+			
 				<div class="col-lg-4 col-md-6">
+				<form action="index.php?act=checkout" method="POST" enctype="">
 					 <div class="step middle payments">
-						<h3>2. Payment and Shipping</h3>
+						<h3>2. Phương Thức Thanh Toán</h3>
 							<ul>
 								<li>
-									<label class="container_radio">Credit Card<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
-										<input type="radio" name="payment" checked>
+									<label class="container_radio">Trả Trước Bằng chuyển Khoản<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
+										<input type="radio" name="payment" value="Trả Trước" checked>
 										<span class="checkmark"></span>
 									</label>
 								</li>
 								<li>
-									<label class="container_radio">Paypal<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
-										<input type="radio" name="payment">
+									<label class="container_radio">Thanh Toán Sau Khi Nhận Hàng<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
+										<input type="radio" name="payment" value="Trả Sau">
 										<span class="checkmark"></span>
 									</label>
 								</li>
-								<li>
-									<label class="container_radio">Cash on delivery<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
-										<input type="radio" name="payment">
-										<span class="checkmark"></span>
-									</label>
-								</li>
-								<li>
-									<label class="container_radio">Bank Transfer<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
-										<input type="radio" name="payment">
-										<span class="checkmark"></span>
-									</label>
-								</li>
+
 							</ul>
 							<div class="payment_info d-none d-sm-block"><figure><img src="img/cards_all.svg" alt=""></figure>	<p>Sensibus reformidans interpretaris sit ne, nec errem nostrum et, te nec meliore philosophia. At vix quidam periculis. Solet tritani ad pri, no iisque definitiones sea.</p></div>
 							
-							<h6 class="pb-2">Shipping Method</h6>
+							<h6 class="pb-2">Shipping Method (Phương thức vận chuyển)</h6>
 							
 						
 						<ul>
 								<li>
-									<label class="container_radio">Standard shipping<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
-										<input type="radio" name="shipping" checked>
+									<label class="container_radio">Standard shipping (Ship Bình Thường)<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
+										<input type="radio" name="shipping" value="Bình Thường" checked>
 										<span class="checkmark"></span>
 									</label>
 								</li>
 								<li>
-									<label class="container_radio">Express shipping<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
-										<input type="radio" name="shipping">
+									<label class="container_radio">Express shipping (Ship Hỏa Tốc)<a href="#0" class="info" data-bs-toggle="modal" data-bs-target="#payments_method"></a>
+										<input type="radio" name="shipping" value="Hỏa Tốc">
 										<span class="checkmark"></span>
 									</label>
 								</li>
@@ -178,32 +170,44 @@
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="step last">
-						<h3>3. Order Summary</h3>
+						<h3>3. Hóa Đơn</h3>
 					<div class="box_general summary">
+						<?php
+						$tongtien2 = 0;
+							foreach($listgiohang as $gh){
+								extract($gh);
+								$tongtien2+=$tongtien;
+						?>
 						<ul>
-							<li class="clearfix"><em>1x Armor Air X Fear</em>  <span>$145.00</span></li>
-							<li class="clearfix"><em>2x Armor Air Zoom Alpha</em> <span>$115.00</span></li>
-						</ul>
+							<li class="clearfix"><em><?=$so_luong?>-<?=$color?>-<?=$name?></em>  <span><?=$tongtien?></span></li>						</ul>
+						<?php
+							}
+						?>
 						<ul>
-							<li class="clearfix"><em><strong>Subtotal</strong></em>  <span>$450.00</span></li>
+							<li class="clearfix"><em><strong>Subtotal</strong></em>  <span><?=$tongtien2?></span></li>
 							<li class="clearfix"><em><strong>Shipping</strong></em> <span>$0</span></li>
 							
 						</ul>
-						<div class="total clearfix">TOTAL <span>$450.00</span></div>
-						<div class="form-group">
+						<div class="total clearfix">TOTAL <span><?=$tongtien2?></span></div>
+						<!-- <div class="form-group">
 								<label class="container_check">Register to the Newsletter.
 								  <input type="checkbox" checked>
 								  <span class="checkmark"></span>
 								</label>
-							</div>
+							</div> -->
 						
-						<a href="confirm.html" class="btn_1 full-width">Confirm and Pay</a>
+						<!-- <a href="index.php?act=confirm" class="btn_1 full-width">Confirm and Pay</a> -->
+						<input type="submit" name="hoadon" class="btn_1 full-width" value="Đặt Hàng ">
+
 					</div>
 					<!-- /box_general -->
 					</div>
 					<!-- /step -->
+					</form>
 				</div>
+				
 			</div>
+			
 			<!-- /row -->
 		</div>
 		<!-- /container -->

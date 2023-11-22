@@ -7,6 +7,7 @@
     include "model/phantrang.php";
     include "model/binhluan.php";
     include "model/giohang.php";
+    include "model/hoadon.php";
 
     include "view/header.php";
     include "global.php";
@@ -296,7 +297,32 @@
                 include "view/checkout.php";
                 break;
             case "checkout":
-                
+                if(isset($_POST['hoadon']) && ($_POST['hoadon'])){
+                    $phuongthucthanhtoan=$_POST['payment'];
+                    $phuongthucvanchuyen=$_POST['shipping'];
+                    echo $phuongthucvanchuyen;
+                    $listgiohang = loadall_giohang($_SESSION['user']['id']);
+                    foreach($listgiohang as $gh){
+                        extract($gh);
+                        $name=$gh['name'];
+                        $iduser=$gh['id_user'];
+                        $sodienthoai=$gh['sodienthoai'];
+                        $diachi=$gh['diachi'];
+                        $idsanpham=$gh['id_sanpham'];
+                        $price=$gh['price'];
+                        $soluong=$gh['so_luong'];
+                        $tongtien=$gh['tongtien'];
+                        $email=$gh['email'];
+                        $phuongthucthanhtoan;
+                        $phuongthucvanchuyen;
+
+                        insert_hoadon($iduser, $name, $email, $sodienthoai, $diachi, $id_sanpham, $price, $so_luong, $tongtien, $phuongthucthanhtoan, $phuongthucvanchuyen);
+                    }
+
+                    echo $idsanpham;
+    
+                }
+                $listgiohang = loadall_giohang($_SESSION['user']['id']);
                 // var_dump($_SESSION['user']['id']);
                 include "view/checkout.php";
                 break;
