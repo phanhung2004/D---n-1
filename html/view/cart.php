@@ -26,9 +26,6 @@
 										Product
 									</th>
 									<th>
-										Trạng thái
-									</th>
-									<th>
 										Size
 									</th>
 									<th>
@@ -64,19 +61,6 @@
 											<img src="<?=$imagegiohang?>" class="lazy" alt="Image">
 										</div>
 										<span class="item_cart"><?=$name?></span>
-									</td>
-									<td>
-										<?php
-											if($trangthai==0){
-												echo "Đang xác thực";
-											}else if($trangthai==1){
-												echo "Đang đợi đơn vị vận chuyển";
-											}else if($trangthai==2){
-												echo "Đơn hàng đàn giao";
-											}else if($trangthai==3){
-												echo "Đã nhận đơn hàng";
-											}
-										?>
 									</td>
 									<td>
 										<strong><?=$size_giohang?></strong>

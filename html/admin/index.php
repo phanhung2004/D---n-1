@@ -5,10 +5,28 @@
     include "../model/danhmuc.php";
     include "../model/taikhoan.php";
     include "../model/binhluan.php";
+    include "../model/hoadon.php";
 
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "hoadon_trangthai":
+                if(isset($_GET['idhd0']) && ($_GET['idhd0'])){
+                    update_trangthai_hoadon0($_GET['idhd0']);
+                }else if(isset($_GET['idhd1']) && ($_GET['idhd1'])){
+                    update_trangthai_hoadon1($_GET['idhd1']);
+                }else if(isset($_GET['idhd2']) && ($_GET['idhd2'])){
+                    update_trangthai_hoadon2($_GET['idhd2']);
+                }else if(isset($_GET['idhd3']) && ($_GET['idhd3'])){
+                    update_trangthai_hoadon3($_GET['idhd3']);
+                }
+                $listhoadon = loadall_hoadonadmin();
+                include "hoadon/hoadon.php";
+                break;
+            case "hoadonadmin":
+                $listhoadon = loadall_hoadonadmin();
+                include "hoadon/hoadon.php";
+                break;
             case "sua_binhluan":
                 if(isset($_POST['suabl']) && ($_POST['suabl'])){
                     $id=$_POST['id'];

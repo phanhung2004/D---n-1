@@ -197,8 +197,17 @@
 							</div> -->
 						
 						<!-- <a href="index.php?act=confirm" class="btn_1 full-width">Confirm and Pay</a> -->
+						<?php
+							if(isset($_SESSION['user'])){
+						?>
 						<input type="submit" name="hoadon" class="btn_1 full-width" value="Đặt Hàng ">
-
+						<?php
+							}else{
+						?>
+						<h5 style="color: blue;">Hãy đăng nhập hoặc đăng kí</h5>
+						<?php
+							}
+						?>
 					</div>
 					<!-- /box_general -->
 					</div>

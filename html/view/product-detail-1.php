@@ -367,7 +367,7 @@
 	                        <span class="ribbon new">Cùng Loại</span>
 	                        <figure>
 	                            <a href="<?=$linksp?>">
-	                                <img class="owl-lazy" src="<?=$imagecl?>" alt="">
+	                                <img class="" src="upload/<?=$image?>" alt="">
 	                            </a>
 	                        </figure>
 	                        <a href="">

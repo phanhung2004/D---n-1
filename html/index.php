@@ -24,7 +24,6 @@
     }
     // echo $begin;
     $spnew = loadall_sanpham_home($begin);
-    
 
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
@@ -287,9 +286,10 @@
                                     clear_giohanguser();
                                 }
                                 // $loginfinish="Đăng nhập thành công";
-                                echo "<script>window.location.href = 'index.php?act=checkout';</script>";
+                                echo "<script>window.location.href = 'index.php?act=cart';</script>";
                             }else{
                                 $loginFale="Đăng nhập thất bại-đăng kí hoặc quên mật khẩu";
+                                // echo "<script>window.location.href = 'index.php?act=checkout';</script>";
                             }
                         }
                     }
@@ -317,17 +317,28 @@
                         $phuongthucvanchuyen;
 
                         insert_hoadon($iduser, $name, $email, $sodienthoai, $diachi, $id_sanpham, $price, $so_luong, $tongtien, $phuongthucthanhtoan, $phuongthucvanchuyen);
+                        // update_giohang_hoadon($iduser)
+                        echo "<script>window.location.href = 'index.php?act=comfirm';</script>";
+
+
                     }
 
                     echo $idsanpham;
     
                 }
-                $listgiohang = loadall_giohang($_SESSION['user']['id']);
+                $listgiohang = loadall_giohanguser();
+                if(isset($_SESSION['user'])){
+                    $listgiohang = loadall_giohang($_SESSION['user']['id']);
+                }
                 // var_dump($_SESSION['user']['id']);
                 include "view/checkout.php";
                 break;
             case "blog":
                 include "view/blog.php";
+                break;
+            case "hoadon":
+                $listhoadon = loadall_hoadon($_SESSION['user']['id']);
+                include "view/hoadon.php";
                 break;
             case "product-detail-1":
                 if(isset($_POST['guibinhluan'])){
