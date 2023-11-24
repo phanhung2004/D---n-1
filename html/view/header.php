@@ -89,13 +89,6 @@
 												</ul>
 											</div>
 
-											<div class="col-lg-3 d-xl-block d-lg-block d-md-none d-sm-none d-none">
-												<div class="banner_menu">
-													<a href="#0">
-														<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="img/banner_menu.jpg" width="400" height="550" alt="" class="img-fluid lazy">
-													</a>
-												</div>
-											</div>
 										</div>
 										<!-- /row -->
 									</div>
@@ -182,11 +175,18 @@
 							
 							?>
 							<li>
-								<div class="dropdown dropdown-cart">
-
-									<a href="index.php?act=account" class="cart_bt"><strong></strong></a>
+								<div class="dropdown dropdown-access">
+									<a href="index.php?act=account" class="access_link"><span>Account</span></a>
 									<div class="dropdown-menu">
+										<a href="index.php?act=account" class="btn_1">Sign In or Sign Up</a>
 
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="dropdown dropdown-cart">
+									<a href="index.php?act=account" class="cart_bt"></a>
+									<div class="dropdown-menu">
 										<div class="total_drop">
 											<div class="clearfix"></div>
 											<a href="index.php?act=cart" class="btn_1 outline">View Cart</a><a href="index.php?act=checkout" class="btn_1">Checkout</a>
@@ -195,22 +195,12 @@
 								</div>
 							
 							</li>
-							<?php
-								}
-							?>
-							<li>
-								<div class="dropdown dropdown-access">
-									<a href="index.php?act=account" class="access_link"><span>Account</span></a>
-									<div class="dropdown-menu">
-										<a href="index.php?act=account" class="btn_1">Sign In or Sign Up</a>
-
-									</div>
-								</div>
-								
-							</li>
 							<li>
 								<a href="index.php?act=account" class="wishlist"><span>Wishlist</span></a>
 							</li>
+							<?php
+								}
+							?>
 
 						</ul>
 					</div>

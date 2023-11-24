@@ -71,6 +71,8 @@
 										<li><a href="index.php?act=home">Home</a></li>
 										<li><a href="index.php?act=danhmuc">Danh mục</a></li>
 										<li><a href="index.php?act=hoadonadmin">Hóa Đơn</a></li>
+										<li><a href="index.php?act=chitietsanpham">Chi tiết sản phẩm</a></li>
+										<li><a href="index.php?act=giohang">Giỏ hàng</a></li>
 
 										<!-- <li><a href="index.php?act=binhluan">Bình Luận</a></li> -->
 										<!-- <li><a href="index.php?act=index-3">Vertical Slider</a></li>
