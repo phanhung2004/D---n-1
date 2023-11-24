@@ -35,7 +35,7 @@
             $stt = 0;
 			foreach($listsanpham as $sp){
 				extract($sp);
-				$xoasp="index.php?act=xoasp&idsp=".$id;
+				$xoasp="index.php?act=xoasp&idsp=$id&iddm=".$iddm;
 				$suasp="index.php?act=updatesp&idsp=".$id;
 				$hinhpath = "../upload/".$image;
 				if(is_file($hinhpath)){

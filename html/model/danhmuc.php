@@ -1,6 +1,6 @@
 <?php
 function loadall_danhmuc(){
-    $sql="select * from danhmuc order by id desc";
+    $sql="SELECT * FROM `danhmuc` WHERE `trangthai` = 0 order by id desc";
     $listdanhmuc=pdo_query($sql);
     return  $listdanhmuc;
 }
@@ -22,5 +22,8 @@ function update_danhmuc($id, $name){
     pdo_query_one($sql);
     // return $onedanhmuc;
 }
-
+function update_danhmuc_mem($id){
+    $sql = "UPDATE `danhmuc` SET `trangthai` = 1 WHERE `danhmuc`.`id` = '$id'";
+    pdo_execute($sql);
+}
 ?>

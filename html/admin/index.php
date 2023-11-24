@@ -89,7 +89,8 @@
                 break;
             case "delete_danhmuc":
                 if(isset($_GET['iddm']) && ($_GET['iddm']>0)){
-                    delete_danhmuc($_GET['iddm']);
+                    // delete_danhmuc($_GET['iddm']);
+                    update_danhmuc_mem($_GET['iddm']);
                 }
                 $listdanhmuc=loadall_danhmuc();
                 include "danhmuc/danhmuc.php";
@@ -146,14 +147,17 @@
                     $name=$_POST['name'];
                     $price=$_POST['price'];
                     $color=$_POST['color'];
-
+                    if(!empty($_FILES['image']['name'])){
                     $image=$_FILES['image']['name'];
                     $dir="../upload/";
                     $upFile=$dir.basename($_FILES['image']['name']);
-                    if(move_uploaded_file($_FILES['image']['tmp_name'], $upFile)){
-                        // echo "thanh cong";
+                        if(move_uploaded_file($_FILES['image']['tmp_name'], $upFile)){
+                            // echo "thanh cong";
+                        }else{
+                            // echo "lỗi";
+                        }
                     }else{
-                        // echo "lỗi";
+                        $image=$_FILES['image']['name'];
                     }
                     
                     $size=$_POST['size'];
@@ -232,15 +236,24 @@
                 }
                 // $listdanhmuc = loadall_danhmuc();
                 $listsanpham = loadall_sanpham($keyw, $iddm);
+                $listsanpham=loadall_sanpham_new("", 0);
                 include "sanpham/list.php";
                 break;
 
             case "xoasp":
                 if(isset($_GET['idsp']) && ($_GET['idsp']>0)){
-                    delete($_GET['idsp']);
+                    $iddm = $_GET['iddm'];
+                    $count = count_sanpham($iddm);
+                    
+                    if(!$count<2){
+                        update_delete_sanpham($_GET['idsp']);
+                    }else{
+                        delete($_GET['idsp']);
+                    }
+                    
                 }
-
-                $listsanpham=loadall_sanpham("", 0);
+                echo $count;
+                $listsanpham=loadall_sanpham_new("", 0);
                 include "sanpham/list.php";
                 break;
             // case "comfirm":

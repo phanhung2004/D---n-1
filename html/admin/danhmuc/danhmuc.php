@@ -6,7 +6,7 @@
         <tr>
         <th scope="col">STT</th>
         <th scope="col">Name</th>
-        <th scope="col">Trạng thái</th>
+        <!-- <th scope="col">Trạng thái</th> -->
         <th scope="col">Chức Năng</th>
         </tr>
     </thead>
@@ -23,7 +23,7 @@
         <tr>
             <th scope="row"><?=$stt?></th>
             <td><?=$name?></td>
-            <td></td>
+            <!-- <td></td> -->
             <td>
                 <a href="<?=$update_danhmuc?>"><button type="button" class="btn btn-primary">Sửa</button></a>
                 <a href="<?=$delete_danhmuc?>"><button type="button" class="btn btn-danger" onclick="return confirm('bạn có muốn xóa không')" >Xóa</button></a> 

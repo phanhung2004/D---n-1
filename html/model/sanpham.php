@@ -4,6 +4,28 @@
     $listsanpham=pdo_query($sql);
     return $listsanpham;
  }
+ function update_delete_sanpham($id){
+  $sql = "UPDATE `sanpham` SET `trangthai_sanpham` = 1 WHERE `sanpham`.`id` = '$id'";
+  pdo_execute($sql);
+ }
+ function count_sanpham($iddm){
+  $sql = "SELECT COUNT(*) AS product_count FROM sanpham WHERE `iddm` = '$iddm'";
+  $result = pdo_execute($sql);
+  return $result;
+ }
+ function loadall_sanpham_new($keyw="",$iddm=0){
+  $sql="SELECT * FROM `sanpham` where `trangthai_sanpham` = 0";
+  // where 1 tức là nó đúng
+  if($keyw!=""){
+      $sql.=" and name like '%".$keyw."%'";
+  }
+  if($iddm>0){
+      $sql.=" and iddm ='".$iddm."'";
+  }
+  $sql.=" order by id desc";
+  $listsanpham=pdo_query($sql);
+  return  $listsanpham;
+}
    function loadall_sanpham($keyw="",$iddm=0){
       $sql="select * from sanpham where 1";
       // where 1 tức là nó đúng
