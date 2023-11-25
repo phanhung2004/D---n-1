@@ -12,18 +12,18 @@
     include "view/header.php";
     include "global.php";
 
-    if(isset($_GET['idpt'])){
-        $page = $_GET['idpt'];
-    }else{
-        $page = "";
-    }
-    if($page == "" || $page == 1){
-        $begin = 0;
-    }else{
-        $begin = ($page*4)-4;
-    }
+    // if(isset($_GET['idpt'])){
+    //     $page = $_GET['idpt'];
+    // }else{
+    //     $page = "";
+    // }
+    // if($page == "" || $page == 1){
+    //     $begin = 0;
+    // }else{
+    //     $begin = ($page*4)-4;
+    // }
     // echo $begin;
-    $spnew = loadall_sanpham_home($begin);
+    $spnew = loadall_sanpham_home();
 
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
@@ -101,18 +101,6 @@
                     }
                 }
                 include "view/account.php";
-                break;
-            case "aopolo":
-                $spaopolo = load_danhmuc_polo();
-                include "view/aopolo.php";
-                break;
-            case "aophong":
-                $spaophong = load_danhmuc_aophong();
-                include "view/aophong.php";
-                break;
-            case "home2":
-                $spsomi = load_danhmuc_aosomi();
-                include "view/home2.php";
                 break;
             case "leave-review":
                 if(isset($_GET['idsp']) && $_GET['idsp'] > 0){
@@ -369,7 +357,30 @@
             case "listing-row-2-sidebar-right":
                 include "view/listing-row-2-sidebar-right.php";
                 break;
-            case "listing-row-1-sidebar-left":
+                // case "aopolo":
+                //     $spaopolo = load_danhmuc_polo();
+                //     include "view/aopolo.php";
+                //     break;
+                // case "aophong":
+                //     $spaophong = load_danhmuc_aophong();
+                //     include "view/aophong.php";
+                //     break;
+                // case "home2":
+                //     $spsomi = load_danhmuc_aosomi();
+                //     include "view/home2.php";
+                //     break;
+            case "aopolo":
+                if(isset($_GET['idpt'])){
+                    $page = $_GET['idpt'];
+                }else{
+                    $page = "";
+                }
+                if($page == "" || $page == 1){
+                    $begin = 0;
+                }else{
+                    $begin = ($page*4)-4;
+                }
+                $spaopolo = load_danhmuc_polo($begin);
                 include "view/listing-row-1-sidebar-left.php";
                 break;
             case "listing-grid-7-sidebar-right":

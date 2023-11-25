@@ -1,6 +1,6 @@
 <?php
-function lay_so_luong_san_pham(){
-    $sql = "SELECT COUNT(*) AS total FROM sanpham"; // Truy vấn để đếm tổng số sản phẩm
+function lay_so_luong_san_pham_aopolo(){
+    $sql = "SELECT COUNT(*) AS total FROM sanpham WHERE iddm = 1"; // Truy vấn để đếm tổng số sản phẩm
     $ket_qua = pdo_query_one($sql);
 
     if ($ket_qua) {

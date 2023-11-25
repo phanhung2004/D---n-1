@@ -59,38 +59,6 @@
 			</div>
 			<div id="icon_drag_mobile"></div>
 		</div>
-		<!--/carousel-->
-
-		<!-- <ul id="banners_grid" class="clearfix">
-			<li>
-				<a href="#0" class="img_container">
-					<img src="img/banners_cat_placeholder.jpg" data-src="img/banner_1.jpg" alt="" class="lazy">
-					<div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-						<h3>Men's Collection</h3>
-						<div><span class="btn_1">Shop Now</span></div>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a href="#0" class="img_container">
-					<img src="img/banners_cat_placeholder.jpg" data-src="img/banner_2.jpg" alt="" class="lazy">
-					<div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-						<h3>Womens's Collection</h3>
-						<div><span class="btn_1">Shop Now</span></div>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a href="#0" class="img_container">
-					<img src="img/banners_cat_placeholder.jpg" data-src="img/banner_3.jpg" alt="" class="lazy">
-					<div class="short_info opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.5)">
-						<h3>Kids's Collection</h3>
-						<div><span class="btn_1">Shop Now</span></div>
-					</div>
-				</a>
-			</li>
-		</ul> -->
-		<!--/banners_grid -->
 		
 		<div class="container margin_60_35">
 			<div class="main_title">
@@ -131,29 +99,8 @@
 
 			<!-- /row -->
 		</div>
-		<div class="pagination__wrapper">
-			<?php
-				$count=lay_so_luong_san_pham();
-				$sotrang=ceil($count/8);
-				// echo $sotrang;
-			?>
-	                    <ul class="pagination">
-							<?php
-								for($i=1;$i<=$sotrang;$i++){
 
-							?>
-	                         <li>
-	                            <a href="index.php?idpt=<?php echo $i ?>" class="active"><?=$i?></a>
-	                        </li>
-							<?php
-							}
-							?>
-
-	                    </ul>
-	                </div>
-		<!-- /container -->
-
-		<div class="featured lazy" data-bg="url(img/featured_home.jpg)">
+		<!-- <div class="featured lazy" data-bg="url(img/featured_home.jpg)">
 			<div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
 				<div class="container margin_60">
 					<div class="row justify-content-center justify-content-md-start">
@@ -171,7 +118,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<!-- /featured -->
 
 		<div class="container margin_60_35">
