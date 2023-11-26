@@ -161,8 +161,8 @@
 	            <!-- /col -->
 	            <div class="col-lg-9">
 				<?php
-						foreach($spaosomi as $aosomi){
-							extract($aosomi);
+						foreach($spaophong as $aophong){
+							extract($aophong);
 							$image=$img_path.$image;
 							$linksp="index.php?act=product-detail-1&idsp=".$id;
 

@@ -369,6 +369,38 @@
                 //     $spsomi = load_danhmuc_aosomi();
                 //     include "view/home2.php";
                 //     break;
+            case "aophong":
+                if(isset($_GET['idpt'])){
+                    $page = $_GET['idpt'];
+                }else{
+                    $page = "";
+                }
+                if($page == "" || $page == 1){
+                    $begin = 0;
+    
+                }else{
+                    $begin = ($page*4)-4;
+                }
+                    // echo $begin;
+                $spaophong = load_danhmuc_aophong($begin);
+                include "view/listing-row-3-sidebar-left.php";
+                break;
+            case "aosomi":
+                if(isset($_GET['idpt'])){
+                    $page = $_GET['idpt'];
+                }else{
+                    $page = "";
+                }
+                if($page == "" || $page == 1){
+                    $begin = 0;
+
+                }else{
+                    $begin = ($page*4)-4;
+                }
+                // echo $begin;
+                $spaosomi = load_danhmuc_aosomi($begin);
+                include "view/listing-row-2-sidebar-left.php";
+                break;
             case "aopolo":
                 if(isset($_GET['idpt'])){
                     $page = $_GET['idpt'];
