@@ -128,7 +128,13 @@
                 break;
             case "deletecart":
                 if(isset($_GET['idgh'])){
-
+                    deletecart_one($_GET['idgh']);
+                   
+                }
+                if(isset($_SESSION['user'])){
+                    $listgiohang = loadall_giohang($_SESSION['user']['id']);
+                }else{
+                    $listgiohang = loadall_giohanguser();
                 }
                 include "view/cart.php";
                 break;
@@ -305,7 +311,7 @@
                         $phuongthucvanchuyen;
 
                         insert_hoadon($iduser, $name, $email, $sodienthoai, $diachi, $id_sanpham, $price, $so_luong, $tongtien, $phuongthucthanhtoan, $phuongthucvanchuyen);
-                        // update_giohang_hoadon($iduser)
+                        clear_giohang();
                         echo "<script>window.location.href = 'index.php?act=comfirm';</script>";
 
 

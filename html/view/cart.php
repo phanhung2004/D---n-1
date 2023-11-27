@@ -52,9 +52,11 @@
 										foreach($listgiohang as $gh){
 											extract($gh);
 											$image=$img_path.$imagegiohang;
-											$linkdelete="index.php?act=deletecart&idgh=".$gh['id'];
+											$iddele= $gh['giohang_id'];
+											$linkdelete="index.php?act=deletecart&idgh=".$iddele;
 											$tongtien2+=$tongtien;
 											echo $tongtien;
+											
 									?>
 									<td>
 										<div class="thumb_cart">

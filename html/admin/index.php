@@ -6,6 +6,7 @@
     include "../model/taikhoan.php";
     include "../model/binhluan.php";
     include "../model/hoadon.php";
+    include "../model/chitietsanpham.php";
 
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];

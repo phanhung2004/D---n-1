@@ -208,7 +208,7 @@
 
 							?>
 	                         <li>
-	                            <a href="index.php?act=aosomi&idpt=<?php echo $i ?>" class="active"><?=$i?></a>
+	                            <a href="index.php?act=aophong&idpt=<?php echo $i ?>" class="active"><?=$i?></a>
 	                        </li>
 							<?php
 							}
