@@ -92,4 +92,20 @@ function load_sanpham_cungloai($id, $iddm){
   return $result;
 
 }
+
+function load_all_fillter_danhmuc($option = []){
+  $sql = "select * from sanpham WHERE iddm = ";
+  if (count($option) == 1) {
+    $sql .= $option[0];
+  } else {
+    foreach($option as $o) {
+      $sql .= $o . " OR iddm = ";
+    }
+  }
+  $sql = rtrim($sql, " OR iddm = ");
+
+  // echo $sql; die;
+  $result = pdo_query($sql);
+  return $result;
+}
 ?>

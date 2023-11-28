@@ -403,8 +403,9 @@
                 }else{
                     $begin = ($page*4)-4;
                 }
-                // echo $begin;
+                
                 $spaosomi = load_danhmuc_aosomi($begin);
+                // $spaosomi = load_all_fillter_danhmuc([1,5]);
                 include "view/listing-row-2-sidebar-left.php";
                 break;
             case "aopolo":
