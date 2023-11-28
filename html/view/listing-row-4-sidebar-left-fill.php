@@ -21,7 +21,7 @@
 	    <!-- /toolbox -->
 	    <div class="container margin_30">
 	        <div class="row">
-	            <aside class="col-lg-3" id="sidebar_fixed">
+			<aside class="col-lg-3" id="sidebar_fixed">
 	                <div class="filter_col">
 						<form action="index.php?act=sanpham_fill" method="POST">
 							<div class="inner_bt"><a href="#" class="open_filters"><i class="ti-close"></i></a></div>
@@ -152,14 +152,14 @@
 							</div>
 						</form>
 	                </div>
-	            </aside>
+	            </aside>	
 
 
 	            <!-- /col -->
 	            <div class="col-lg-9">
 				<?php
-						foreach($spaosomi as $aosomi){
-							extract($aosomi);
+						foreach($spFill as $aopolo){
+							extract($aopolo);
 							$image=$img_path.$image;
 							$linksp="index.php?act=product-detail-1&idsp=".$id;
 
@@ -195,23 +195,11 @@
 					?>
 					<div class="pagination__wrapper">
 						<?php
-							$count=lay_so_luong_san_pham_aosomi();
+							$count=lay_so_luong_san_pham_aopolo();
 							$sotrang=ceil($count/4);
 							// echo $sotrang;
 						?>
-	                    <ul class="pagination">
-							<?php
-								for($i=1;$i<=$sotrang;$i++){
 
-							?>
-	                         <li>
-	                            <a href="index.php?act=aosomi&idpt=<?php echo $i ?>" class="active"><?=$i?></a>
-	                        </li>
-							<?php
-							}
-							?>
-
-	                    </ul>
 	                </div>
 	            </div>
 

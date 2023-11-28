@@ -92,7 +92,7 @@
 									<a href="index.php?act=binhluan">Bình Luận</a>
 								</li>
                                 <li>
-									<a href="index.php?act=blog">Thống Kê</a>
+									<a href="index.php?act=thongke">Thống Kê</a>
 								</li>
 								<!-- <li class="megamenu submenu">
 									<a href="">Pages</a> -->

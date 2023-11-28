@@ -7,10 +7,16 @@
     include "../model/binhluan.php";
     include "../model/hoadon.php";
     include "../model/chitietsanpham.php";
+    include "../model/thongke.php";
 
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "thongke":
+                $listthongke_sanpham = thongke_sanpham();
+                $listthongke = thongke();
+                include "thongke/thongke.php";
+                break;
             case "hoadon_trangthai":
                 if(isset($_GET['idhd0']) && ($_GET['idhd0'])){
                     update_trangthai_hoadon0($_GET['idhd0']);

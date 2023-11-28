@@ -309,8 +309,9 @@
                         $email=$gh['email'];
                         $phuongthucthanhtoan;
                         $phuongthucvanchuyen;
+                        $date = date("Y-m-d");
 
-                        insert_hoadon($iduser, $name, $email, $sodienthoai, $diachi, $id_sanpham, $price, $so_luong, $tongtien, $phuongthucthanhtoan, $phuongthucvanchuyen);
+                        insert_hoadon($iduser, $name, $email, $sodienthoai, $diachi, $id_sanpham, $price, $so_luong, $tongtien, $phuongthucthanhtoan, $phuongthucvanchuyen, $date);
                         clear_giohang();
                         echo "<script>window.location.href = 'index.php?act=comfirm';</script>";
 
@@ -391,6 +392,24 @@
                 $spaophong = load_danhmuc_aophong($begin);
                 include "view/listing-row-3-sidebar-left.php";
                 break;
+            // case "sanpham_fill":
+            //     $iddm = [];
+            //     if(isset($_POST['fill'])){
+            //         $iddm[] = $_POST['iddm'];
+            //     }
+            //     $spFill = load_all_fillter_danhmuc($iddm);
+            //     include "view/listing-grid-4-sidebar-left-fill.php";
+            //     break;
+            case "sanpham_fill":
+                $iddm = [];
+                if(isset($_POST['fill']) && isset($_POST['iddm'])) {
+                    $iddm = $_POST['iddm']; // Mảng chứa các giá trị iddm được chọn
+                }
+                // var_dump($iddm);
+                $spFill = load_all_fillter_danhmuc($iddm);
+                
+                include "view/listing-row-4-sidebar-left-fill.php";
+                break;
             case "aosomi":
                 if(isset($_GET['idpt'])){
                     $page = $_GET['idpt'];
@@ -403,7 +422,6 @@
                 }else{
                     $begin = ($page*4)-4;
                 }
-                
                 $spaosomi = load_danhmuc_aosomi($begin);
                 // $spaosomi = load_all_fillter_danhmuc([1,5]);
                 include "view/listing-row-2-sidebar-left.php";
