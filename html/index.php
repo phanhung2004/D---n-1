@@ -167,13 +167,13 @@
                     $iduser=$_SESSION['user']['id'];
                     
                     insert_giohang($id, $iduser, $color, $size, $soluong, $image, $tongtien);
-                    echo $iduser;
-                    echo $color;
-                    echo $size;
-                    echo $soluong;
-                    echo $id;
-                    echo $image;
-                    echo $tongtien;
+                    // echo $iduser;
+                    // echo $color;
+                    // echo $size;
+                    // echo $soluong;
+                    // echo $id;
+                    // echo $image;
+                    // echo $tongtien;
                     
                 }
                 if(isset($_POST['cart_review']) && ($_POST['cart_review'])){
@@ -200,12 +200,12 @@
 
                     
                     // echo $iduser;
-                    echo $color;
-                    echo $size;
-                    echo $soluong;
-                    echo $id;
-                    echo $image;
-                    echo $tongtien;
+                    // echo $color;
+                    // echo $size;
+                    // echo $soluong;
+                    // echo $id;
+                    // echo $image;
+                    // echo $tongtien;
                     insert_giohanguser($id, $color, $size, $soluong, $image, $tongtien);
                     // $product = array(
                     //     'id' => $id,
@@ -294,7 +294,7 @@
                 if(isset($_POST['hoadon']) && ($_POST['hoadon'])){
                     $phuongthucthanhtoan=$_POST['payment'];
                     $phuongthucvanchuyen=$_POST['shipping'];
-                    echo $phuongthucvanchuyen;
+                    // echo $phuongthucvanchuyen;
                     $listgiohang = loadall_giohang($_SESSION['user']['id']);
                     foreach($listgiohang as $gh){
                         extract($gh);
