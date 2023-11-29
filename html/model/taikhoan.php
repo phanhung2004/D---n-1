@@ -17,6 +17,10 @@ function check_existing_email($email){
         unset($conn);
     }
 }
+// function load_one_account($id){
+//     $sql = "SELECT * FROM `taikhoan` WHERE taikhoan.id = '$id'";
+//     pdo_query_one($sql);
+// }
 function checkuser($email,$password) {
     $sql="SELECT * FROM taikhoan WHERE email='$email' and pass='$password'";
     $taikhoan = pdo_query_one($sql);
@@ -39,6 +43,12 @@ function update_taikhoan($id,$username,$pass,$sodienthoai){
     pdo_query_one($sql);
     // return $onedanhmuc;
 }
+function update_taikhoan_new($id,$email,$pass,$username,$diachi,$sodienthoai){
+    $sql="UPDATE `taikhoan` SET `username` = '$username', `email` = '$email', `sodienthoai` = '$sodienthoai', `diachi` = '$diachi', `pass` = '$pass' WHERE `taikhoan`.`id` = '$id'";
+    pdo_query_one($sql);
+    // return $onedanhmuc;
+}
+
 
 function loadone_taikhoan($id){
     $sql="SELECT * FROM `taikhoan` WHERE `taikhoan`.`id` = '$id'";

@@ -152,16 +152,7 @@
                                 </h6>
                             </div>
                             <hr>
-                            <!-- <div class="form-group">
-                                <label class="container_radio" style="display: inline-block; margin-right: 15px;">Private
-                                    <input type="radio" name="client_type" checked value="private">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="container_radio" style="display: inline-block;">Company
-                                    <input type="radio" name="client_type" value="company">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div> -->
+
                             <div class="private box">
                                 <div class="row no-gutters">
                                     <div class="col-6 pr-1">
@@ -169,11 +160,7 @@
                                             <input type="text" class="form-control" name="name" placeholder="Name*">
                                         </div>
                                     </div>
-                                    <!-- <div class="col-6 pl-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name*">
-                                        </div>
-                                    </div> -->
+
                                     <div class="col-12">
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="diachi" placeholder="Full Address*">
@@ -182,32 +169,12 @@
                                 </div>
                                 <!-- /row -->
                                 <div class="row no-gutters">
-                                    <!-- <div class="col-6 pr-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="City*">
-                                        </div>
-                                    </div> -->
-                                    <!-- <div class="col-6 pl-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Postal Code*">
-                                        </div>
-                                    </div> -->
+
                                 </div>
                                 <!-- /row -->
                                 
                                 <div class="row no-gutters">
-                                    <!-- <div class="col-6 pr-1">
-                                        <div class="form-group">
-                                            <div class="custom-select-form">
-                                                <select class="wide add_bottom_10" name="country" id="country">
-                                                        <option value="" selected>Country*</option>
-                                                        <option value="Europe">Europe</option>
-                                                        <option value="United states">United states</option>
-                                                        <option value="Asia">Asia</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div> -->
+   
                                     <div class="col-6 pl-1">
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="sodienthoai" placeholder="Telephone *">
@@ -217,63 +184,9 @@
                                 <!-- /row -->
                                 
                             </div>
-                            <!-- /private -->
-                            <!-- <div class="company box" style="display: none;">
-                                <div class="row no-gutters">
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Company Name*">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Full Address">
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- /row -->
-                                <!-- <div class="row no-gutters">
-                                    <div class="col-6 pr-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="City*">
-                                        </div>
-                                    </div>
-                                    <div class="col-6 pl-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Postal Code*">
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- /row -->
-                                <!-- <div class="row no-gutters">
-                                    <div class="col-6 pr-1">
-                                        <div class="form-group">
-                                            <div class="custom-select-form">
-                                                <select class="wide add_bottom_10" name="country" id="country_2">
-                                                        <option value="" selected>Country*</option>
-                                                        <option value="Europe">Europe</option>
-                                                        <option value="United states">United states</option>
-                                                        <option value="Asia">Asia</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 pl-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Telephone *">
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- /row -->
-                            <!-- </div> -->
-                            <!-- /company -->
+
                             <hr>
-                            <!-- <div class="form-group">
-                                <label class="container_check">Accept <a href="#0">Terms and conditions</a>
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div> -->
+
                             <div class="text-center"><input type="submit" name="register" value="Register" class="btn_1 full-width"></div>
                             <?php
                             if(isset($_SESSION['user'])){
@@ -308,10 +221,15 @@
                         <div class="form_container">
 
 
-                        <form action="index.php?act=register" method="POST" enctype="multipart/form-data">
-
+                        <form action="index.php?act=thaydoi_acc" method="POST" enctype="multipart/form-data">
+                            <?php
+                        
+                                    extract($listacc);
+                                
+                            ?>
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" id="email_2" placeholder="Email*">
+                                <label for="">Nhập email</label>
+                                <input type="email" class="form-control" name="email" value="<?=$email?>" id="email_2">
                                 <h6 style="color: red;">
                                     <?php
                                         if(isset($erroEmail)&& ($erroEmail!="")){
@@ -324,7 +242,8 @@
                                 </h6>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password" id="password_in_2" value="" placeholder="Password*">
+                            <label for="">Nhập pass</label>
+                                <input type="text" class="form-control" name="pass" id="password_in_2" value="<?=$pass?>">
                                 <h6 style="color: red;">
                                     <?php
                                         if(isset($erroPass)&& ($erroPass!="")){
@@ -334,131 +253,41 @@
                                 </h6>
                             </div>
                             <hr>
-                            <!-- <div class="form-group">
-                                <label class="container_radio" style="display: inline-block; margin-right: 15px;">Private
-                                    <input type="radio" name="client_type" checked value="private">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="container_radio" style="display: inline-block;">Company
-                                    <input type="radio" name="client_type" value="company">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div> -->
+ 
                             <div class="private box">
                                 <div class="row no-gutters">
                                     <div class="col-6 pr-1">
+                                    <label for="">Nhập user name</label>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="Name*">
+                                            <input type="text" class="form-control" name="username" value="<?=$username?>">
                                         </div>
                                     </div>
-                                    <!-- <div class="col-6 pl-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name*">
-                                        </div>
-                                    </div> -->
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="diachi" placeholder="Full Address*">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /row -->
-                                <div class="row no-gutters">
-                                    <!-- <div class="col-6 pr-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="City*">
-                                        </div>
-                                    </div> -->
-                                    <!-- <div class="col-6 pl-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Postal Code*">
-                                        </div>
-                                    </div> -->
-                                </div>
-                                <!-- /row -->
-                                
-                                <div class="row no-gutters">
-                                    <!-- <div class="col-6 pr-1">
-                                        <div class="form-group">
-                                            <div class="custom-select-form">
-                                                <select class="wide add_bottom_10" name="country" id="country">
-                                                        <option value="" selected>Country*</option>
-                                                        <option value="Europe">Europe</option>
-                                                        <option value="United states">United states</option>
-                                                        <option value="Asia">Asia</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <div class="col-6 pl-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="sodienthoai" placeholder="Telephone *">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- /row -->
-                                
-                            </div>
-                            <!-- /private -->
-                            <!-- <div class="company box" style="display: none;">
-                                <div class="row no-gutters">
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Company Name*">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Full Address">
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- /row -->
-                                <!-- <div class="row no-gutters">
-                                    <div class="col-6 pr-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="City*">
-                                        </div>
-                                    </div>
-                                    <div class="col-6 pl-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Postal Code*">
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- /row -->
-                                <!-- <div class="row no-gutters">
-                                    <div class="col-6 pr-1">
-                                        <div class="form-group">
-                                            <div class="custom-select-form">
-                                                <select class="wide add_bottom_10" name="country" id="country_2">
-                                                        <option value="" selected>Country*</option>
-                                                        <option value="Europe">Europe</option>
-                                                        <option value="United states">United states</option>
-                                                        <option value="Asia">Asia</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 pl-1">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Telephone *">
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <!-- /row -->
-                            <!-- </div> -->
-                            <!-- /company -->
-                            <hr>
-                            <!-- <div class="form-group">
-                                <label class="container_check">Accept <a href="#0">Terms and conditions</a>
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div> -->
-                            <div class="text-center"><input type="submit" name="register" value="Thay Đổi" class="btn_1 full-width"></div>
 
-                            <!-- //form -->
+                                    <div class="col-12">
+                                    <label for="">Nhập địa chỉ</label>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="diachi" value="<?=$diachi?>">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row no-gutters">
+
+                                </div>
+                                <div class="row no-gutters">
+ 
+                                    <div class="col-6 pl-1">
+                                    <label for="">Nhập số điện thoại</label>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="sodienthoai" value="<?=$sodienthoai?>">
+                                        </div>
+                                    </div>
+                                </div>          
+                            </div>
+
+                            <hr>
+
+                            <div class="text-center"><input type="submit" name="thaydoi" value="Thay Đổi" class="btn_1 full-width"></div>
                             </form>
                             <div class="text-center"><a href="index.php?act=dangxuat"><input type="submit" value="Đăng xuất" class="btn_1 full-width"></a></div>
                             <h5 style="color: green;"><?php

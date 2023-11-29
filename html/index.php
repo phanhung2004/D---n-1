@@ -28,6 +28,25 @@
     if(isset($_GET['act'])&&($_GET['act']!="")){
         $act=$_GET['act'];
         switch($act){
+            case "thaydoi_acc":
+                if(isset($_POST['thaydoi']) && ($_POST['thaydoi'] != "")){
+                    $email = $_POST['email'];
+                    $pass = $_POST['pass'];
+                    $username = $_POST['username'];
+                    $diachi = $_POST['diachi'];
+                    $sodienthoai = $_POST['sodienthoai'];
+                    $id = $_SESSION['user']['id'];
+
+                    update_taikhoan_new($id,$email,$pass,$username,$diachi,$sodienthoai);
+                    echo '<script>';
+                    echo 'setTimeout(function() { alert("Thay đổi thành công!"); }, 500);'; // Hiển thị alert sau 2 giây
+                    echo '</script>';
+                }
+
+                $listacc = loadone_taikhoan($_SESSION['user']['id']);
+
+                include "view/account.php";
+                break;
             case "quenmatkhau":
                 if(isset($_POST['sendemail'])){
                     $email = $_POST['email'];
@@ -73,6 +92,7 @@
                         }
                     }
                 }
+                
                 include "view/account.php";
                 break;
             case "register":
@@ -124,6 +144,8 @@
                 include "view/comfirm.php";
                 break;
             case "account":
+                // echo "<h1>hehe</h1>";
+                $listacc = loadone_taikhoan($_SESSION['user']['id']);
                 include "view/account.php";
                 break;
             case "deletecart":

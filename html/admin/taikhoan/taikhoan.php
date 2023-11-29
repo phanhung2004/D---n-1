@@ -39,7 +39,13 @@
             </td>
             <td>
                 <a href="<?=$update_taikhoan?>"><button type="button" class="btn btn-primary">Sửa</button></a>
+                <?php
+                    if($role != 1){
+                ?>
                 <a href="<?=$delete_taikhoan?>"><button type="button" class="btn btn-danger" onclick="return confirm('bạn có muốn xóa không')" >Xóa</button></a> 
+                <?php
+                    }
+                ?>
             </td>
         </tr>
         <?php
