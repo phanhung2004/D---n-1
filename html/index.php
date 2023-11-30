@@ -144,8 +144,10 @@
                 include "view/comfirm.php";
                 break;
             case "account":
-                // echo "<h1>hehe</h1>";
-                $listacc = loadone_taikhoan($_SESSION['user']['id']);
+                if(isset($_SESSION['user'])){
+                    $listacc = loadone_taikhoan($_SESSION['user']['id']);
+                }
+                
                 include "view/account.php";
                 break;
             case "deletecart":

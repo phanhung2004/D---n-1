@@ -3,6 +3,11 @@
     $sql = "INSERT INTO `taikhoan` (`username`, `email`, `sodienthoai`, `diachi`, `pass`) VALUES ('$name', '$email','$sodienthoai','$diachi', '$password');";
     pdo_execute($sql);
 }
+function count_taikhoan(){
+    $sql = "SELECT COUNT(*) AS total FROM taikhoan"; // Truy vấn để đếm tổng số sản phẩm
+    $ket_qua = pdo_query_one($sql);
+    return  $ket_qua;
+}
 function check_existing_email($email){
     try {
         $conn = pdo_get_connection();

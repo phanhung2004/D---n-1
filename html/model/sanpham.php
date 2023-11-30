@@ -48,6 +48,11 @@
     $sql = "INSERT INTO `sanpham` (`name`, `price`, `color`, `image`, `size`, `mota`, `ngaydang`, `soluong`, `giagoc`, `giakhuyenmai`, `iddm`) VALUES ('$name', '$price','$color','$image','$size', '$mota', '$date', '$soluong', '$giagoc', '$giakhuyenmai', '$iddm');";
     pdo_execute($sql);
 }
+function count_sanpham_home(){
+  $sql = "SELECT COUNT(*) AS total1 FROM sanpham"; // Truy vấn để đếm tổng số sản phẩm
+  $ket_qua = pdo_query_one($sql);
+  return  $ket_qua;
+}
 function loadone_sanpham($id){
   $sql = "select * from sanpham where id = $id";
   $result = pdo_query_one($sql);
@@ -71,6 +76,7 @@ function updatesp($id,$name, $price, $color, $image, $size, $mota, $soluong, $gi
 //   $result = pdo_query($sql);
 //   return $result;
 // }
+
 function load_danhmuc_polo($begin){
   $sql = "select * from sanpham where iddm = 1 ORDER BY id DESC LIMIT $begin,4";
   $result = pdo_query($sql);

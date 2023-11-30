@@ -56,7 +56,6 @@
 											$linkdelete="index.php?act=deletecart&idgh=".$iddele;
 											$tongtien2+=$tongtien;
 											echo $tongtien;
-											
 									?>
 									<td>
 										<div class="thumb_cart">

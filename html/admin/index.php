@@ -273,10 +273,23 @@
             //     include "comfirm.php";
             //     break;
             case "home":
+                $listthongke_sanpham = thongke_thang_moi_nhat();
+                $listthongke = thongke_tuan_moi_nhat();
+                $counttaikhoan = count_taikhoan();
+                $countsanpham = count_sanpham_home();
+                $thongke = thongke();
+
+                // var_dump($counttaikhoan);
                 include "home.php";
                 break;
         }
     }else{
+        $listthongke_sanpham = thongke_thang_moi_nhat();
+        $listthongke = thongke_tuan_moi_nhat();
+        $counttaikhoan = count_taikhoan();
+        $countsanpham = count_sanpham_home();
+        $thongke = thongke();
+
         include "home.php";  
     }
     include "footer.php";
