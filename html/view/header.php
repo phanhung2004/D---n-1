@@ -95,9 +95,9 @@
 									<!-- /menu-wrapper -->
 								</li>
 
-								<li>
+								<!-- <li>
 									<a href="#0">Tổng hợp bình luận</a>
-								</li>
+								</li> -->
 								<?php
 									if(isset($_SESSION['user'])){
 										extract($_SESSION['user']);

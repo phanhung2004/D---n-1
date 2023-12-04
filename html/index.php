@@ -368,7 +368,7 @@
                     // $sizeandcolor= loadone_chitietsanpham($_GET['idsp']);
                     $sanpham = loadone_sanpham($_GET['idsp']);
                     $sanphamchitiet = loadall_chitiet($_GET['idsp']);
-                    var_dump($sanpham['price']);
+                    // var_dump($sanpham['price']);
                     // var_dump($sanphamchitiet);
                     $sanphamcl = load_sanpham_cungloai($_GET['idsp'], $sanpham['iddm']);
                     $binhluan = loadall_binhluan($_GET['idsp']);
