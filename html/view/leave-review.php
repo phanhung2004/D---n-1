@@ -8,7 +8,10 @@
     <link href="css/custom.css" rel="stylesheet">
 <main>
 	
-<?php extract($sanphambinhluan); ?>
+<?php extract($sanphambinhluan);
+	
+?>
+
 <form action="index.php?act=leave-review&idsp=<?=$id?>" method="POST">
 	<div class="container margin_60_35">
 	

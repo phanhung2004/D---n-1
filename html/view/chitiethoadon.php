@@ -40,14 +40,11 @@
                 foreach($listhoadon as $hd){
                     extract($hd);
                     $stt+=1;
-                    $link="index.php?act=chitiethoadon&idsp=".$id;
-                    
             ?>
-            
             <tr>
                 
                 <th scope="row"><?=$stt?></th>
-                <td><a href="<?=$link?>"><?=$name?></a></td>
+                <td><?=$name?></td>
                 <td>
                     <?php
                        if($trang_thai == 0){

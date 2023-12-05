@@ -273,8 +273,8 @@
 							<?php
 								foreach($binhluan as $bl){
 									extract($bl);
-									extract($sanpham);
-									
+									// extract($sanpham);
+
 							?>
 	                            <div class="row justify-content-between">
 	                                <div class="col-lg-5">
@@ -285,6 +285,7 @@
 	                                        </div>
 	                                        <h4><?=$name?></h4>
 	                                        <p><?=$noidung?></p>
+											
 	                                    </div>
 	                                </div>
 	                                <div class="col-lg-5">
@@ -328,7 +329,7 @@
 								<?php
 									if(isset($_SESSION['user'])){
 								?>
-	                            <p class="text-end"><a href="index.php?act=leave-review&idsp=<?=$id?>" class="btn_1">Leave a review</a></p>
+	                            <p class="text-end"><a href="index.php?act=leave-review&idsp=<?=$_GET['idsp']?>" class="btn_1">Leave a review</a></p>
 								<?php
 									}
 								?>
