@@ -32,6 +32,7 @@
             <th scope="col">Số điện thoại</th>
             <th scope="col">Phương thức thanh toán</th>
             <th scope="col">Phương thức vận chuyển</th>
+            <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -42,6 +43,7 @@
                     $stt+=1;
                     $link="index.php?act=chitiethoadon&idsp=".$id;
                     
+                    $linkdeletehoadon="index.php?act=deletehoadon&idhd=".$id;
             ?>
             
             <tr>
@@ -67,6 +69,9 @@
                 <td><?=$sodienthoai?></td>
                 <td><?=$phuong_thuc_thanh_toan?></td>
                 <td><?=$phuong_thuc_van_chuyen?></td>
+                <td class="options">
+					<a href="<?=$linkdeletehoadon?>"><i class="ti-trash"></i></a>
+				</td>
 
             </td>
         </tr>

@@ -31,4 +31,8 @@ function update_trangthai_hoadon3($id){
     $sql = "UPDATE `hoadon` SET `trang_thai` = '3' WHERE `hoadon`.`id` = '$id'";
     pdo_execute($sql);
 }
+function deletehoadon($id){
+    $sql = "DELETE FROM `hoadon` WHERE id=".$id;
+    pdo_execute($sql);
+  }
 ?>

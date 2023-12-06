@@ -355,7 +355,16 @@
             case "blog":
                 include "view/blog.php";
                 break;
+            case "deletehoadon":
+                if(isset($_GET['idhd'])){
+                    deletehoadon($_GET['idhd']);
+                    echo "<script>window.location.href = 'index.php?act=hoadon';</script>";
+
+                }
+                include "view/hoadon.php";
+                break;
             case "hoadon":
+
                 $listhoadon = loadall_hoadon($_SESSION['user']['id']);
                 include "view/hoadon.php";
                 break;
