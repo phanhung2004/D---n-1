@@ -315,9 +315,10 @@
 					foreach($spnew as $sp){
 						extract($sp);
 						$image=$img_path.$image;
+						$linknew = "index.php?act=product-detail-1&idsp=".$id;
 				?>
 				<div class="col-lg-6">
-					<a class="box_news" href="index.php?act=product-detail-1">
+					<a class="box_news" href="<?=$linknew?>">
 						<figure>
 							<img src="<?=$image?>" data-src="img/blog-thumb-1.jpg" alt="" width="400" height="266" class="lazy">
 							<figcaption><strong>New</strong>Pro</figcaption>
